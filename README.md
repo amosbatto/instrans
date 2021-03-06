@@ -1,7 +1,7 @@
-**`instrans.php` - *software to insert translations in PO files***
+**`[instrans.php](https://github.com/amosbatto/instrans)` - *software to insert translations in PO files***
 
 **Contents:**  
-    [Instalation](#INSTALATION)  
+    [Installation](#INSTALLATION)  
     [Description](#DESCRIPTION)  
     [Format](#FORMAT)  
     [Notes](#NOTES)  
@@ -24,10 +24,10 @@
     [Documentation in Other Languages](#DOCUMENTATION_IN_OTHER_LANGUAGES)  
           
   
-### <a id="INSTALATION">INSTALATION</a> ###  
+### <a id="INSTALLATION">INSTALLATION</a> ###  
   
 In order to use instrans, first install PHP with the command line interface. 
-Instrans has been tested with PHP 5.0 - 7.3.   
+Instrans 0.2.1 has been tested with PHP 5.0 - 7.3.   
   
 **MS Windows:**  
 If you use MS Windows, download PHP from: http://www.php.net
@@ -52,13 +52,13 @@ command line like this:
   
 On some systems, you need to use the variable `$Path` in place of `$PATH`.  
   
-After installing PHP, download [instrans](https://github.com/amosbatto/instrans). 
+After installing PHP, download [instrans](https://codeload.github.com/amosbatto/instrans/zip/main). 
 Now the script `instrans.php` can be used.  
   
 **GNU/Linux, UNIX, Cygwin, and Mac OS X:**  
 Users of UNIX-like systems should install PHP from the repository  
-of their distribution. For example, users of Debian and its derivatives (like Ubuntu) can  
-install PHP with `apt`:  
+of their distribution. For example, users of Debian and its derivatives (like Ubuntu) 
+can install PHP with `apt`:  
 ```
 su              
 apt install php5-cli  
@@ -68,7 +68,8 @@ exit
 ```
 sudo apt install php5-cli  
 ```  
-After installing PHP, download [instrans](https://github.com/amosbatto/instrans). Now the script `instrans.php` can be used.
+After installing PHP, download [instrans](https://codeload.github.com/amosbatto/instrans/zip/main).   
+Now the script `instrans.php` can be used.
   
   
 ### <a id="DESCRIPTION">DESCRIPTION</a> ###  
@@ -574,7 +575,7 @@ msgstr ""
 ```
   
   
-#### <a id="bilingual_Example">--bilingual Example</a> ####  
+#### <a id="bilingual_Example">`--bilingual` Example</a> ####  
   
 Many Quechua speakers are not accustomed to read their own language and need  
 to see the translation in Spanish next to the Quechua. The translators decide  
@@ -633,7 +634,7 @@ this reason, the ampersand was stripped from the phrase `&Abrir` before it was
 inserted.  
   
   
-#### <a id="statusbar_Example">--statusbar Example</a> ####  
+#### <a id="statusbar_Example">`--statusbar` Example</a> ####  
   
 The Quechua translators don't like the bilingual menus because they are very  
 large and cumbersome. For this reason, they decide to put Spanish translations  
@@ -644,7 +645,7 @@ from the menus would not be inserted into non-blank status bar PO objects. 
 The `--strip` and `--replace` options are used to remove any problematic  
 ampersands and variables that might cause errors.
 ```  
-php instrans --strip --replace --statusbar="MENU_LABEL_" "MENU_STATUSLINE_"   --overwrite --verbose qu-BO.po es-ES.po qu-BO-test.po  
+php instrans --strip --replace --statusbar="MENU_LABEL_" "MENU_STATUSLINE_" --overwrite --verbose qu-BO.po es-ES.po qu-BO-test.po  
 ```
   
 The new file `qu-BO-test.po` will contain:  
@@ -675,7 +676,7 @@ msgstr ""
 "¿Uqjinayachisqaykita %s archivopi \njallch'ayta munankichu?"  
 ```  
   
-Now when the mouse passes over Open in the File menu, the user of this software  
+Now when the mouse passes over **Open** in the **File** menu, the user of this software  
 will see "Kichay" in the menu and "Abrir" in the status bar.  
   
   
@@ -695,14 +696,16 @@ subdirectories, then issue the command:
   
 ### <a id="LICENSE_AND_AUTHOR">LICENSE AND AUTHOR</a> ###
    
-**License:** The GNU Lesser General Protection License 3.0 or later, which can be found at: [http://www.gnu.org](http://www.gnu.org)    
+**License:** The GNU [Lesser General Protection License 3.0](https://www.gnu.org/licenses/lgpl-3.0.html) or later    
 **Author:** Amos Batto (amosbatto@yahoo.com)    
 **Created:** 22 Jun 2006    
 **Last updated** 05 Mar 2021  
   
-This script was written as part of ILLA's project to help people create translations of software in indigenous and minority languages.  
+This script was written as part of ILLA's project to help people create 
+translations of software in indigenous and minority languages.  
   
-Please send me feedback and bug reports to amosbatto@yahoo.com, so I can improve this script. Thanks.  
+Please send me feedback and bug reports to amosbatto@yahoo.com, so I can 
+improve this script. Thanks.  
   
   
 ### <a id="DOCUMENTATION_IN_OTHER_LANGUAGES">DOCUMENTATION IN OTHER LANGUAGES</a> ###  
