@@ -57,7 +57,9 @@ Now the script `instrans.php` can be used.
   
 **GNU/Linux, UNIX, Cygwin, and Mac OS X:**  
 Users of UNIX-like systems should install PHP from the repository  
-of their distribution. For example, users of Debian and its derivatives (like Ubuntu) 
+of their distribution. 
+
+For example, users of Debian and its derivatives (like Ubuntu) 
 can install PHP with `apt`:  
 ```
 su              
