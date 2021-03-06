@@ -26,7 +26,7 @@
   
 ### <a id="INSTALLATION">INSTALLATION</a> ###  
   
-In order to use instrans, first install PHP with the command line interface. 
+In order to use instrans, first install PHP with the command line interface.   
 Instrans 0.2.1 has been tested with PHP 5.0 - 7.3.   
   
 **MS Windows:**  
