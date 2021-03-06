@@ -1,4 +1,4 @@
-**`[instrans.php](https://github.com/amosbatto/instrans)` - *software to insert translations in PO files***
+**[`instrans.php`](https://github.com/amosbatto/instrans) - *software to insert translations in PO files***
 
 **Contents:**  
     [Installation](#INSTALLATION)  
