@@ -701,10 +701,10 @@ subdirectories, then issue the command:
 **Created:** 22 Jun 2006    
 **Last updated** 05 Mar 2021  
   
-This script was written as part of ILLA's project to help people create 
+This script was written as part of ILLA's project to help people create  
 translations of software in indigenous and minority languages.  
   
-Please send me feedback and bug reports to amosbatto@yahoo.com, so I can 
+Please send me feedback and bug reports to amosbatto@yahoo.com, so I can  
 improve this script. Thanks.  
   
   
