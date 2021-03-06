@@ -1,0 +1,430 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: instrans\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-07-19 17:33-0500\n"
+"Last-Translator: Amos Batto <abatto@indiana.edu>\n"
+"Language-Team: Amos Batto <amosbatto@yahoo.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: /media/hda6/ciber-runa/instrans-0.2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: instrans.php:118
+#, php-format
+msgid "Error: No puede abrir el archivo log \"%s\"."
+msgstr "Error: Can not open the log file \"%s\"."
+
+#: instrans.php:137
+#, php-format
+msgid "Error: No puede crear el directorio temporario \"%s\"."
+msgstr "Error: Can not create the temporary directory \"%s\"."
+
+#: instrans.php:150
+#, php-format
+msgid "Error: No puede sobre-escribir el directorio \"%s\"."
+msgstr "Error: Can not overwrite the directory \"%s\"."
+
+#: instrans.php:155
+#, php-format
+msgid "Error: No puede renombrar el directorio \"%s\"."
+msgstr "Error: Cannot rename the directory \"%s\"."
+
+#: instrans.php:160
+msgid ""
+"\n"
+"Resumen de procesamiento total:\n"
+msgstr ""
+"\n"
+"Summary of total processing:\n"
+
+#: instrans.php:162
+#: instrans.php:163
+#, php-format
+msgid "%d líneas, %d objetos PO y %d errores de sintaxis leido de \"%s\"\n"
+msgstr "%d lines, %d PO objects and %d syntax errors read from \"%s\"\n"
+
+#: instrans.php:164
+#, php-format
+msgid "%d líneas y %d objetos PO escrito en \"%s\"\n"
+msgstr "%d lines and %d PO objects written in \"%s\"\n"
+
+#: instrans.php:170
+#: instrans.php:1515
+#, php-format
+msgid "%d signos \"&\" y %d variables quitado.\n"
+msgstr "%d ampersands (&) and %d variables stripped.\n"
+
+#: instrans.php:174
+#, php-format
+msgid "Tiempo de procesamiento total: %f segundos.\n"
+msgstr "Total processing time: %f seconds.\n"
+
+#: instrans.php:298
+msgid "No hay un msgid definido para este texto."
+msgstr "There is no defined msgstr for this text."
+
+#: instrans.php:304
+msgid "Línea no termina en comillas."
+msgstr "Line does not end in double quotes."
+
+#: instrans.php:339
+msgid "msgid no está encerrado en comillas."
+msgstr "msgid is not enclosed in double quotes."
+
+#: instrans.php:344
+msgid "msgid no es definido correctamente."
+msgstr "The msgid is not defined correctly."
+
+#: instrans.php:367
+msgid "msgstr no está encerrado en comillas."
+msgstr "msgstr is not enclosed in double quotes."
+
+#: instrans.php:372
+msgid "msgstr no es definido correctamente."
+msgstr "msgstr is not defined correctly."
+
+#: instrans.php:378
+msgid "Línea no tiene forma conocida."
+msgstr "Line does not have a known form."
+
+#: instrans.php:493
+#, php-format
+msgid "%d variable fue reemplazado en msgstr \"%s\"\n"
+msgstr "%d variable was replaced in msgstr \"%s\"\n"
+
+#: instrans.php:494
+#, php-format
+msgid "%d variables fueron reemplazado en msgstr \"%s\"\n"
+msgstr "%d variables were replaced in msgstr \"%s\"\n"
+
+#: instrans.php:611
+msgid ""
+"Error: Falta argumentos.\n"
+"\n"
+msgstr ""
+"Error: No enough arguments.\n"
+"\n"
+
+#: instrans.php:640
+#: instrans.php:681
+msgid "IDIOMA"
+msgstr "LANGUAGE"
+
+#: instrans.php:646
+#, php-format
+msgid "Aviso: Lengua de interfaz \"%s\" no es disponible.\n"
+msgstr "Warning: Interface language \"%s\" is not available.\n"
+
+#: instrans.php:647
+#, php-format
+msgid "En su lugar usará lengua \"%s\".\n"
+msgstr "Will use language \"%s\" instead.\n"
+
+#: instrans.php:662
+msgid "FRASE-MENU"
+msgstr "MENU-PHRASE"
+
+#: instrans.php:672
+msgid "Error: Hay que especificar la FRASE-BARRA-DE-ESTADO "
+msgstr "Error: Must specify the STATUS-BAR-PHRASE "
+
+#: instrans.php:673
+msgid ""
+"de la opción --statusbar.\n"
+"\n"
+msgstr ""
+"for the option --statusbar.\n"
+"\n"
+
+#: instrans.php:687
+msgid "SEPARADOR"
+msgstr "SEPARATOR"
+
+#: instrans.php:692
+msgid "ARCHIVO"
+msgstr "FILE"
+
+#: instrans.php:706
+msgid ""
+"Error: Demasiado argumentos\n"
+"\n"
+msgstr ""
+"Error: Too many arguments.\n"
+"\n"
+
+#: instrans.php:718
+msgid "readme-es.txt"
+msgstr "readme-en.txt"
+
+#: instrans.php:723
+msgid ""
+"Error: Hay que especificar ORIGINAL-PO y TRASLACIONES-PO.\n"
+"\n"
+msgstr ""
+"Error: Must specify the ORIGINAL-PO and the TRANSLATIONS-PO.\n"
+"\n"
+
+#: instrans.php:726
+msgid ""
+"Error: Hay que especificar TRASLACIONES-PO.\n"
+"\n"
+msgstr ""
+"Error: Must specify the TRANSLATIONS-PO.\n"
+"\n"
+
+#: instrans.php:729
+msgid ""
+"Error: No se puede combinar opciones --msgstr y --bilingual.\n"
+"\n"
+msgstr ""
+"Error: Can not combine the options --msgstr and --bilingual.\n"
+"\n"
+
+#: instrans.php:734
+#, php-format
+msgid "Error: Archivo o directorio de ORIGINAL-PO \"%s\" no existe."
+msgstr "Error: The file or directory ORIGINAL-PO \"%s\" does not exist."
+
+#: instrans.php:738
+#, php-format
+msgid "Error: Archivo o directorio de TRASLACIONES-PO \"%s\" no existe."
+msgstr "Error: The file or directory TRANSLATIONS-PO \"%s\" does not exist."
+
+#: instrans.php:755
+#, php-format
+msgid "Error: No puede crear el directorio NUEVO-PO \"%s\"."
+msgstr "Error: Unable to create the NEW-PO directory \"%s\"."
+
+#: instrans.php:768
+#, php-format
+msgid "Error: \"%s\" es un directorio, pero \"%s\" es un archivo.\n"
+msgstr "Error: \"%s\" is a directory, but \"%s\" is a file.\n"
+
+#: instrans.php:769
+#: instrans.php:772
+msgid ""
+"Deben ser el mismo tipo.\n"
+"\n"
+msgstr ""
+"They should be the same type.\n"
+"\n"
+
+#: instrans.php:771
+#, php-format
+msgid "Error: \"%s\" es un archivo, pero \"%s\" es un directorio.\n"
+msgstr "Error: \"%s\" is a file, but \"%s\" is a directory.\n"
+
+#: instrans.php:862
+#, php-format
+msgid ""
+"Error: Necesita usar \"%s\" para especificar el %s de la opción %s\n"
+"\n"
+msgstr ""
+"Error: Need to use \"%s\" in order to specify the %s in the option %s.\n"
+"\n"
+
+#: instrans.php:971
+#, php-format
+msgid "Error escribiendo al archivo log \"%s\"."
+msgstr "Error writing to the log file \"%s\"."
+
+#: instrans.php:1035
+#: instrans.php:1167
+#, php-format
+msgid "Error: No puede abrir el archivo \"%s\"."
+msgstr "Error: Unable to open the file \"%s\"."
+
+#: instrans.php:1058
+#: instrans.php:1187
+#: instrans.php:1261
+#, php-format
+msgid "Error leyendo archivo \"%s\"."
+msgstr "Error reading the file \"%s\"."
+
+#: instrans.php:1078
+#: instrans.php:1207
+#: instrans.php:1222
+#: instrans.php:1276
+#: instrans.php:1310
+#, php-format
+msgid "Error de sintaxis en línea %d del archivo \"%s\"\n"
+msgstr "Syntax error in line %d of file \"%s\"\n"
+
+#: instrans.php:1079
+#: instrans.php:1208
+#: instrans.php:1311
+#, php-format
+msgid ""
+"No hay un msgstr definido para el msgid \"%s\"\n"
+"\n"
+msgstr ""
+"There is not a msgstr defined for the msgid \"%s\"\n"
+"\n"
+
+#: instrans.php:1095
+#: instrans.php:1273
+#, php-format
+msgid ""
+"Error de sintaxis en línea %d del archivo \"%s\"\n"
+"%s\n"
+"Línea: %s\n"
+"\n"
+msgstr ""
+"Syntax error in line %d of file \"%s\"\n"
+"%s\n"
+"Line: %s\n"
+"\n"
+
+#: instrans.php:1107
+#, php-format
+msgid "Aviso: Archivo \"%s\" no contiene ningunos objetos PO.\n"
+msgstr "Warning: File \"%s\" does not have any PO objects.\n"
+
+#: instrans.php:1110
+#, php-format
+msgid "Error: Archivo \"%s\" no contiene ningunos objetos PO."
+msgstr "Error: File \"%s\" does not have any PO objects."
+
+#: instrans.php:1116
+#: instrans.php:1502
+#: instrans.php:1508
+#, php-format
+msgid "%d líneas, %d objetos PO y %d errores de sintaxis leido del archivo \"%s\"\n"
+msgstr "%d lines, %d PO objects and %d syntax errors read from file \"%s\"\n"
+
+#: instrans.php:1223
+#, php-format
+msgid ""
+"%s\n"
+"Línea: %s\n"
+"\n"
+msgstr ""
+"%s\n"
+"Line: %s\n"
+"\n"
+
+#: instrans.php:1229
+#, php-format
+msgid "Error: Archivo \"%s\" no contiene ningunas frases PO."
+msgstr "Error: File \"%s\" does not have any PO phrases."
+
+#: instrans.php:1236
+#, php-format
+msgid "Error: No puede abrir archivo \"%s\" para leerlo."
+msgstr "Error: Unable to open file \"%s\" in order to read it."
+
+#: instrans.php:1243
+msgid "Error: No puede crear un archivo temporario."
+msgstr "Error: Unable to create a temporary file."
+
+#: instrans.php:1248
+msgid "Error: No puede abrir un archivo temporario para escribirlo."
+msgstr "Error: Unable to open a temporary file in order to write in it."
+
+#: instrans.php:1277
+#, php-format
+msgid ""
+"%s\n"
+"Línea: %s\n"
+"Chequee línea %d del archivo \"%s\".\n"
+"\n"
+msgstr ""
+"%s\n"
+"Line: %s\n"
+"Check line %d of file \"%s\".\n"
+"\n"
+
+#: instrans.php:1292
+#: instrans.php:1473
+#, php-format
+msgid "Error escribiendo al archivo temporario \"%s\"."
+msgstr "Error writing to temporary file \"%s\"."
+
+#: instrans.php:1315
+#, php-format
+msgid "Error de sintaxis en línea %d de archivo \"%s\"\n"
+msgstr "Syntax error in line %d of file \"%s\".\n"
+
+#: instrans.php:1316
+#, php-format
+msgid "No hay un msgstr definido para el msgid \"%s\"\n"
+msgstr "There is no defined msgstr for the msgid \"%s\"\n"
+
+#: instrans.php:1317
+#, php-format
+msgid ""
+"Chequee línea %d del archivo \"%d\".\n"
+"\n"
+msgstr ""
+"Check line %d of file \"%d\".\n"
+"\n"
+
+#: instrans.php:1410
+#: instrans.php:1459
+#, php-format
+msgid "Archivo \"%s\" línea %d:\n"
+msgstr "File \"%s\" line %d:\n"
+
+#: instrans.php:1490
+#, fuzzy, php-format
+msgid "Error: No puede borrar el archivo \"%s\" para reemplazarlo."
+msgstr "Error: Unable to erase file \"%s\" in order to replace it.\n"
+
+#: instrans.php:1495
+msgid "Error: No puede dar un nuevo nombre a un archivo temporario."
+msgstr "Error: Unable to give a new name to a temporary file."
+
+#: instrans.php:1501
+#, php-format
+msgid ""
+"\n"
+"Resumen de \"%s\":\n"
+msgstr ""
+"\n"
+"Summary of \"%s\":\n"
+
+#: instrans.php:1511
+#, php-format
+msgid "%d líneas y %d objetos PO escrito en el archivo \"%s\"\n"
+msgstr "%d lines and %d PO objets written in file \"%s\"\n"
+
+#: instrans.php:1518
+#, php-format
+msgid "Tiempo de procesamiento: %f segundos.\n"
+msgstr "Processing time: %f seconds.\n"
+
+#: instrans.php:1524
+#, php-format
+msgid "%d objetos PO escrito en el archivo \"%s\"\n"
+msgstr "%d PO objects written in the file \"%s\"\n"
+
+#: instrans.php:1555
+#: instrans.php:1598
+#, php-format
+msgid "Error: No puede abrir el directorio \"%s\"."
+msgstr "Error: Unable to open the directory \"%s\"."
+
+#: instrans.php:1614
+#, php-format
+msgid "Error: No puede crear directorio \"%s\"."
+msgstr "Error: Unable to create the directory \"%s\"."
+
+#: instrans.php:1632
+#, php-format
+msgid "Error: No puede copiar archivo \"%s\"."
+msgstr "Error: Unable to copy the file \"%s\"."
+
+#: instrans.php:1675
+msgid "help-es.txt"
+msgstr "help-en.txt"
+
+#: instrans.php:1677
+msgid "Error: No puede abrir el archivo \"help-es.txt\".\n"
+msgstr "Error: Unable to open the file \"help-en.txt\".\n"
+

@@ -1,0 +1,346 @@
+﻿<?php
+$aGetText = array( 
+
+#: instrans.php:118
+"Error: No puede abrir el archivo log \"%s\"." =>
+"Erro: Não pode abrir o arquivo log \"%s\".",
+
+#: instrans.php:137
+"Error: No puede crear el directorio temporario \"%s\"." =>
+"Erro: Não pode criar o directório temporário \"%s\".",
+
+#: instrans.php:150
+"Error: No puede sobre-escribir el directorio \"%s\"." =>
+"Erro: No pode sobre-escrever o directório \"%s\".",
+
+#: instrans.php:155
+"Error: No puede renombrar el directorio \"%s\"." =>
+"Erro: No pode renomear o directório \"%s\".",
+
+#: instrans.php:160
+"Resumen de procesamiento total:\n" =>
+"Processamento total:\n",
+
+"%d línea(s), %d objeto(s) PO y %d error(es) de sintaxis leido de \"%s\"\n" . 
+"%d línea(s), %d objeto(s) PO y %d error(es) de sintaxis leido de \"%s\"\n" .
+"%d línea(s) y %d objeto(s) PO escrito en \"%s\"\n" =>
+
+"%d linha(s), %d objecto(s) PO y %d erro(s) de sintaxe leito de \"%s\"\n" . 
+"%d linha(s), %d objecto(s) PO y %d erro(s) de sintaxe leito de \"%s\"\n" .
+"%d linha(s) y %d objecto(s) PO escrito em \"%s\"\n",
+
+"%d cadena(s) quitado\n" =>
+"%d cadeira(s) eliminado\n",
+
+"Cadena(s) quitado en %d msgstr(s)\n" =>
+"Cadeira(s) eliminado em %d msgstr(s)\n",
+
+"%d signo(s) \"&\" quitado\n" =>
+"%d signo(s) (\"&\") eliminado\n",
+
+"Signo(s) \"&\" quitado en %d msgstr(s)\n" =>
+"Signo(s) \"&\" eliminado em %d msgstr(s)\n",
+
+"%d reemplazo(s)\n" =>
+"%d substituções\n",
+
+"Reemplazo(s) en %d msgstr(s)\n" =>
+"Substitução(ões) in %d msgstr(s)\n",
+
+"%d variable(s) reemplazada(s)\n" =>
+"%d variable(s) substituída(s)\n",
+
+"Variable(s) reemplazada(s) en %d msgstr(s)\n" =>
+"Variable(s) substituída(s) em %d msgstr(s)\n",
+
+#: instrans.php:174
+"Tiempo de procesamiento total: %f segundos.\n" =>
+"Tempo de processamento total: %f segundos.\n",
+
+"Commentario es afuera de la orden correcta de PO." =>
+"Comentário é fora da ordem correcta de PO.",
+
+#: instrans.php:298
+"Esta línea de texto es fuera de la orden PO o no tiene un msgid ni msgstr definido." =>
+"Esta linha de texto é fora da ordem PO ou não tem um msgid ni msgstr definido.",
+
+#: instrans.php:304
+"Línea no termina en comillas." =>
+"Linha não termina em aspas.",
+
+"El msgid no es definido para este msgstr" =>
+"O msgid não é definido para este msgstr",
+
+" es definido afuera de la orden correcta de PO." =>
+" é definido afora da ordem correcta de PO.",
+
+" no está encerrado en comillas." =>
+" não está encerrado em aspas.",
+
+#: instrans.php:378
+"Línea no tiene forma conocida." =>
+"Linha não tem forma conhecida.",
+
+#: instrans.php:493
+"%d variable reemplazado en msgstr \"%s\"\n" =>
+"%d variável substituído em msgstr \"%s\"\n",
+
+#: instrans.php:494
+"%d variables reemplazado en msgstr \"%s\"\n" =>
+"%d variáveis substituído em msgstr \"%s\"\n",
+
+#: instrans.php:571
+"Aviso: \"%s\" todavía no es implementado.\n" .
+"Use opción --replace BUSQUEDA REEMPLAZO para especificar variables." =>
+
+"Aviso: \"%s\" ainda não é implementado.\n" .
+"Use opção --replace PROCURA SUBSTITUÇÃO para especificar variáveis.",
+
+#: instrans.php:611
+"Error: Falta argumentos.\n\n" =>
+"Erro: Falta argumentos.\n\n",
+
+#: instrans.php:640
+#: instrans.php:681
+"IDIOMA" =>
+"IDIOMA",
+
+#: instrans.php:646
+"Aviso: Lengua de interfaz \"%s\" no es disponible.\n" .
+"En su lugar usará lengua \"%s\".\n" =>
+
+"Aviso: Língua de interface \"%s\" não é disponível.\n" .
+"Em seu lugar usará língua \"%s\".\n", 
+
+#: instrans.php:662
+"FRASE-MENU" =>
+"FRASE-MENU",
+
+#: instrans.php:672
+"Error: Hay que especificar la FRASE-BARRA-DE-ESTADO " .
+"de la opción --statusbar.\n\n" =>
+
+"Erro: Tem que especificar a FRASE-BARRA-DE-ESTADO " .
+"da opção --statusbar.\n\n",
+
+#: instrans.php:687
+"SEPARADOR" =>
+"SEPARADOR",
+
+"CADENA" =>
+"CADEIRA", 
+
+"BUSQUEDA" =>
+"PROCURA",
+
+"Error: Hay que especificar el REEMPLAZO de la opción --replace.\n\n" => 
+"Erro: Tem que especificar o SUBSTITUÇÃO para a opção --replace.\n\n",
+
+#: instrans.php:692
+"ARCHIVO" =>
+"ARQUIVO",
+
+"Error: \"%s\" no es un argumento valido." =>
+"Erro: \"%s\" não é um argumento válido.",
+
+#: instrans.php:706
+"Error: Demasiado argumentos\n\n" =>
+"Erro: Demasiado argumentos.\n\n",
+
+#: instrans.php:718
+"readme-es.txt" =>
+"readme-pt.txt",
+
+#: instrans.php:723
+"Error: Hay que especificar ORIGINAL-PO y TRASLACIONES-PO.\n\n" =>
+"Erro: Tem que especificar ORIGINAL-PO e TRANSLACIONES-PO.\n\n",
+
+#: instrans.php:726
+"Error: Hay que especificar TRASLACIONES-PO.\n\n" =>
+"Erro: Tem que especificar TRANSLACÕES-PO.\n\n",
+
+#: instrans.php:729
+"Error: No se puede combinar opciones --msgstr y --bilingual.\n\n" =>
+"Erro: Não pode combinar as opções --msgstr e --bilingual.\n\n",
+
+#: instrans.php:734
+"Error: Archivo o directorio de ORIGINAL-PO \"%s\" no existe."  =>
+"Erro: Arquivo ou directório de ORIGINAL-PO \"%s\" não existe.",
+
+#: instrans.php:738
+"Error: Archivo o directorio de TRASLACIONES-PO \"%s\" no existe." =>
+"Erro: Arquivo o directório de TRASLACIONES-PO \"%s\" não existe.",
+
+#: instrans.php:755
+"Error: No puede crear el directorio NUEVO-PO \"%s\"." =>
+"Erro: Não pode criar o directório NUEVO-PO \"%s\".",
+
+#: instrans.php:768
+"Error: \"%s\" es un directorio, pero \"%s\" es un archivo.\n" .
+"Deben ser el mismo tipo.\n\n" =>
+
+"Erro: \"%s\" é um directório, mas \"%s\" é um arquivo.\n" .
+"Devem ser o mesmo tipo.\n\n",
+
+#: instrans.php:771
+"Error: \"%s\" es un archivo, pero \"%s\" es un directorio.\n" .
+"Deben ser el mismo tipo.\n\n" =>
+
+"Erro: \"%s\" é um arquivo, mas \"%s\" é um directório.\n" .
+"Devem ser o mesmo tipo.\n\n",
+
+#: instrans.php:862
+"Error: Necesita usar \"%s\" para especificar el %s de la opción %s\n\n" =>
+"Erro: Necessita usar \"%s\" para especificar o %s da opção %s\n\n",
+
+"%d reemplazo en msgstr \"%s\"\n" =>
+"%d substitução(ões) em msgstr \"%s\"\n",
+
+"%d reemplazos en msgstr \"%s\"\n" =>
+"%d substitução(ões) em msgstr \"%s\"\n",
+
+"Reemplazo(s) en msgstr \"%s\"\n" =>
+"Substitução(ões) em msgstr \"%s\"\n",
+
+#: instrans.php:971
+"Error escribiendo al archivo log \"%s\"." =>
+"Erro escrevendo ao arquivo log \"%s\".",
+
+#: instrans.php:1035
+#: instrans.php:1167
+"Error: No puede abrir el archivo \"%s\"." =>
+"Erro: Não pode abrir o arquivo \"%s\".",
+
+#: instrans.php:1058
+#: instrans.php:1187
+#: instrans.php:1261
+"Error leyendo archivo \"%s\"." =>
+"Erro lendo arquivo \"%s\".",
+
+#: instrans.php:1222
+"Error de sintaxis en línea %d del archivo \"%s\"\n%s\nLínea: %s\n\n" =>
+"Erro de sintaxe em linha %d do arquivo \"%s\"\n%s\nLinha: %s\n\n",
+
+#: instrans.php:1276
+"Error de sintaxis en línea %d del archivo \"%s\"\n" .
+"%s\nLínea: %s\nChequee línea %d del archivo \"%s\".\n\n" =>
+
+"Erro de sintaxe em linha %d do arquivo \"%s\"\n" .
+"%s\nLinha: %s\nVerifique linha %d do arquivo \"%s\".\n\n",
+
+#: instrans.php:1078
+#: instrans.php:1207
+#: instrans.php:1310
+"Error de sintaxis en línea %d del archivo \"%s\"\n" .
+"No hay un msgstr definido para el msgid \"%s\"\n\n" =>
+
+"Erro de sintaxe em linha %d do arquivo \"%s\"\n" .
+"Não tem um msgstr definido pro msgid \"%s\"\n\n",
+
+#: instrans.php:1095
+#: instrans.php:1273
+"Error de sintaxis en línea %d del archivo \"%s\"\n%s\nLínea: %s\n\n" =>
+"Erro de sintaxe em linha %d do arquivo \"%s\"\n%s\nLinha: %s\n\n",
+
+#: instrans.php:1107
+"Aviso: Archivo \"%s\" no contiene ningunos objetos PO.\n" =>
+"Aviso: Arquivo \"%s\" no contem nenhuns objectos PO.\n",
+
+#: instrans.php:1110
+"Error: Archivo \"%s\" no contiene ningunos objetos PO." =>
+"Erro: Arquivo \"%s\" no contem nenhuns objectos PO.\n",
+
+#: instrans.php:1223
+"%s\nLínea: %s\n\n" =>
+"%s\nLinha: %s\n\n",
+
+#: instrans.php:1229
+"Error: Archivo \"%s\" no contiene ningunas frases PO." =>
+"Erro: Arquivo \"%s\" não contem nenhumas frases PO.",
+
+#: instrans.php:1236
+"Error: No puede abrir archivo \"%s\" para leerlo." =>
+"Erro: No pode abrir arquivo \"%s\" para ler-lo.",
+
+#: instrans.php:1243
+"Error: No puede crear un archivo temporario." =>
+"Erro: Não pode criar um arquivo temporário.",
+
+#: instrans.php:1248
+"Error: No puede abrir un archivo temporario para escribirlo." =>
+"Erro: Não pode abrir um arquivo temporário para escrever-lo.",
+
+#: instrans.php:1292
+#: instrans.php:1473
+"Error escribiendo al archivo temporario \"%s\"." =>
+"Erro escrevendo ao arquivo temporário \"%s\".",
+
+
+#: instrans.php:1315
+"Error de sintaxis en línea %d de archivo \"%s\"\n" . 
+"No hay un msgstr definido para el msgid \"%s\"\n" . 
+"Chequee línea %d del archivo \"%d\".\n\n" =>
+
+"Erro de sintaxe em linha %d de arquivo \"%s\"\n" . 
+"Não tem um msgstr definido pro msgid \"%s\"\n" . 
+"Verifique linha %d do arquivo \"%d\".\n\n",
+
+#: instrans.php:1410
+#: instrans.php:1459
+"Archivo \"%s\" línea %d:\n" =>
+"Arquivo \"%s\" linha %d:\n",
+
+#: instrans.php:1490
+#, fuzzy, php-format
+"Error: No puede borrar el archivo \"%s\" para reemplazarlo." =>
+"Erro: Não pode borrar o arquivo \"%s\" para substituir-lo.",
+
+#: instrans.php:1495
+"Error: No puede dar un nuevo nombre a un archivo temporario." =>
+"Erro: Não pode dar um novo nome a um arquivo temporário.",
+
+"Resumen de \"%s\":\n" .
+"%d línea(s), %d objeto(s) PO y %d error(es) de sintaxis leido del archivo \"%s\"\n" =>
+
+"Resumem de \"%s\":\n" .
+"%d linha(s), %d objecto(s) PO y %d erro(s) de sintaxe leito do arquivo \"%s\"\n", 
+
+
+"%d línea(s), %d objeto(s) PO y %d error(es) de sintaxis leido del archivo \"%s\"\n" =>
+"%d linha(s), %d objeto(s) PO y %d erro(s) de sintaxe leito do arquivo \"%s\"\n",
+
+"%d línea(s) y %d objeto(s) PO escrito en el archivo \"%s\"\n" => 
+"%d linha(s) y %d objecto(s) PO escrito no arquivo \"%s\"\n",
+
+#: instrans.php:1518
+"Tiempo de procesamiento: %f segundos.\n\n" =>
+"Tempo de processamento: %f segundos.\n\n",
+
+#: instrans.php:1524
+"%d objetos PO escrito en el archivo \"%s\"\n" =>
+"%d objectos PO escrito no arquivo \"%s\"\n",
+
+#: instrans.php:1555
+#: instrans.php:1598
+"Error: No puede abrir el directorio \"%s\"." =>
+"Erro: Não pode abrir o directório \"%s\".",
+
+#: instrans.php:1614
+"Error: No puede crear directorio \"%s\"." =>
+"Erro: Não pode criar directório \"%s\".",
+
+#: instrans.php:1632
+"Error: No puede copiar archivo \"%s\"." =>
+"Erro: Não pode copiar arquivo \"%s\".",
+
+#: instrans.php:1675
+"help-es.txt" =>
+"help-pt.txt",
+
+#: instrans.php:1677
+"Error: No puede abrir el archivo \"help-es.txt\".\n" =>
+"Erro: Não pode abrir o arquivo \"help-pt.txt\".\n"
+
+);
+
+?>

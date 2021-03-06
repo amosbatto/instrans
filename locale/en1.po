@@ -1,0 +1,768 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: instrans\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2006-07-19 16:39-0500\n"
+"Last-Translator: Amos Batto <abatto@indiana.edu>\n"
+"Language-Team: Amos Batto <amosbatto@yahoo.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: /media/hda6/ciber-runa/instrans-0.2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: testanjuta.c:118
+#: instrans.php:118
+#: testanjuta.php:118
+#, c-format
+msgid "Error: No puede abrir el archivo log \"%s\"."
+msgstr "Error: Can not open the log file \"%s\"."
+
+#: testanjuta.c:137
+#: instrans.php:137
+#: testanjuta.php:137
+#, c-format
+msgid "Error: No puede crear el directorio temporario \"%s\"."
+msgstr "Error: Can not create the temporary directory \"%s\"."
+
+#: testanjuta.c:150
+#: instrans.php:150
+#: testanjuta.php:150
+#, c-format
+msgid "Error: No puede sobre-escribir el directorio \"%s\"."
+msgstr "Error: Can not overwrite the directory \"%s\"."
+
+#: testanjuta.c:155
+#: instrans.php:155
+#: testanjuta.php:155
+#, c-format
+msgid "Error: No puede renombrar el directorio \"%s\"."
+msgstr "Error: Cannot rename the directory \"%s\"."
+
+#: testanjuta.c:160
+#: instrans.php:160
+#: testanjuta.php:160
+msgid ""
+"\n"
+"Resumen de procesamiento total:\n"
+msgstr ""
+"\n"
+"Summary of total processing:\n"
+
+#: testanjuta.c:162
+#: testanjuta.c:163
+#: instrans.php:162
+#: instrans.php:163
+#: testanjuta.php:162
+#: testanjuta.php:163
+#, c-format
+msgid "%d líneas, %d objetos PO y %d errores de sintaxis leido de \"%s\"\n"
+msgstr "%d lines, %d PO objects and %d syntax errors read from \"%s\"\n"
+
+#: testanjuta.c:164
+#: instrans.php:164
+#: testanjuta.php:164
+#, c-format
+msgid "%d líneas y %d objetos PO escrito en \"%s\"\n"
+msgstr "%d lines and %d PO objects written in \"%s\"\n"
+
+#: testanjuta.c:170
+#: testanjuta.c:1515
+#: instrans.php:170
+#: instrans.php:1515
+#: testanjuta.php:170
+#: testanjuta.php:1515
+#, c-format
+msgid "%d signos \"&\" y %d variables quitado.\n"
+msgstr "%d ampersands (&) and %d variables stripped.\n"
+
+#: testanjuta.c:174
+#: instrans.php:174
+#: testanjuta.php:174
+#, c-format
+msgid "Tiempo de procesamiento total: %f segundos.\n"
+msgstr "Total processing time: %f seconds.\n"
+
+#: testanjuta.c:298
+#: instrans.php:298
+#: testanjuta.php:298
+#, fuzzy
+msgid "No hay un msgid definido para este texto."
+msgstr "There is no defined msgstr for the msgid \"%s\"\n"
+
+#: testanjuta.c:304
+#: instrans.php:304
+#: testanjuta.php:304
+msgid "Línea no termina en comillas."
+msgstr "Line does not end in double quotes."
+
+#: testanjuta.c:339
+#: instrans.php:339
+#: testanjuta.php:339
+#, fuzzy
+msgid "msgid no está encerrado en comillas."
+msgstr "Line does not end in double quotes."
+
+#: testanjuta.c:344
+#: instrans.php:344
+#: testanjuta.php:344
+#, fuzzy
+msgid "msgid no es definido correctamente."
+msgstr "The msgid is not yet defined"
+
+#: testanjuta.c:367
+#: instrans.php:367
+#: testanjuta.php:367
+#, fuzzy
+msgid "msgstr no está encerrado en comillas."
+msgstr "Line does not end in double quotes."
+
+#: testanjuta.c:372
+#: instrans.php:372
+#: testanjuta.php:372
+msgid "msgstr no es definido correctamente."
+msgstr ""
+
+#: testanjuta.c:378
+#: instrans.php:378
+#: testanjuta.php:378
+msgid "Línea no tiene forma conocida."
+msgstr "Line does not have a known form."
+
+#: testanjuta.c:493
+#: instrans.php:493
+#: testanjuta.php:493
+#, c-format
+msgid "%d variable fue reemplazado en msgstr \"%s\"\n"
+msgstr ""
+
+#: testanjuta.c:494
+#: instrans.php:494
+#: testanjuta.php:494
+#, c-format
+msgid "%d variables fueron reemplazado en msgstr \"%s\"\n"
+msgstr ""
+
+#: testanjuta.c:611
+#: instrans.php:611
+#: testanjuta.php:611
+msgid ""
+"Error: Falta argumentos.\n"
+"\n"
+msgstr ""
+"Error: No enough arguments.\n"
+"\n"
+
+#: testanjuta.c:640
+#: testanjuta.c:681
+#: instrans.php:640
+#: instrans.php:681
+#: testanjuta.php:640
+#: testanjuta.php:681
+msgid "IDIOMA"
+msgstr ""
+
+#: testanjuta.c:646
+#: instrans.php:646
+#: testanjuta.php:646
+#, c-format
+msgid "Aviso: Lengua de interfaz \"%s\" no es disponible.\n"
+msgstr ""
+
+#: testanjuta.c:647
+#: instrans.php:647
+#: testanjuta.php:647
+#, c-format
+msgid "En su lugar usará lengua \"%s\".\n"
+msgstr ""
+
+#: testanjuta.c:662
+#: instrans.php:662
+#: testanjuta.php:662
+msgid "FRASE-MENU"
+msgstr ""
+
+#: testanjuta.c:672
+#: instrans.php:672
+#: testanjuta.php:672
+msgid "Error: Hay que especificar la FRASE-BARRA-DE-ESTADO "
+msgstr "Error: Must specify the STATUS-BAR-PHRASE "
+
+#: testanjuta.c:673
+#: instrans.php:673
+#: testanjuta.php:673
+msgid ""
+"de la opción --statusbar.\n"
+"\n"
+msgstr ""
+"for the option --statusbar.\n"
+"\n"
+
+#: testanjuta.c:687
+#: instrans.php:687
+#: testanjuta.php:687
+msgid "SEPARADOR"
+msgstr ""
+
+#: testanjuta.c:692
+#: instrans.php:692
+#: testanjuta.php:692
+msgid "ARCHIVO"
+msgstr ""
+
+#: testanjuta.c:706
+#: instrans.php:706
+#: testanjuta.php:706
+#, fuzzy
+msgid ""
+"Error: Demasiado argumentos\n"
+"\n"
+msgstr ""
+"Error: No enough arguments.\n"
+"\n"
+
+#: testanjuta.c:718
+#: instrans.php:718
+#: testanjuta.php:718
+msgid "readme-es.txt"
+msgstr "readme-en.txt"
+
+#: testanjuta.c:723
+#: instrans.php:723
+#: testanjuta.php:723
+msgid ""
+"Error: Hay que especificar ORIGINAL-PO y TRASLACIONES-PO.\n"
+"\n"
+msgstr ""
+"Error: Must specify the ORIGINAL-PO and the TRANSLATIONS-PO.\n"
+"\n"
+
+#: testanjuta.c:726
+#: instrans.php:726
+#: testanjuta.php:726
+msgid ""
+"Error: Hay que especificar TRASLACIONES-PO.\n"
+"\n"
+msgstr ""
+"Error: Must specify the TRANSLATIONS-PO.\n"
+"\n"
+
+#: testanjuta.c:729
+#: instrans.php:729
+#: testanjuta.php:729
+msgid ""
+"Error: No se puede combinar opciones --msgstr y --bilingual.\n"
+"\n"
+msgstr ""
+"Error: Can not combine the options --msgstr and --bilingual.\n"
+"\n"
+
+#: testanjuta.c:734
+#: instrans.php:734
+#: testanjuta.php:734
+#, c-format
+msgid "Error: Archivo o directorio de ORIGINAL-PO \"%s\" no existe."
+msgstr "Error: The file or directory ORIGINAL-PO \"%s\" does not exist."
+
+#: testanjuta.c:738
+#: instrans.php:738
+#: testanjuta.php:738
+#, c-format
+msgid "Error: Archivo o directorio de TRASLACIONES-PO \"%s\" no existe."
+msgstr "Error: The file or directory TRANSLATIONS-PO \"%s\" does not exist."
+
+#: testanjuta.c:755
+#: instrans.php:755
+#: testanjuta.php:755
+#, c-format
+msgid "Error: No puede crear el directorio NUEVO-PO \"%s\"."
+msgstr "Error: Unable to create the NEW-PO directory \"%s\"."
+
+#: testanjuta.c:768
+#: instrans.php:768
+#: testanjuta.php:768
+#, c-format
+msgid "Error: \"%s\" es un directorio, pero \"%s\" es un archivo.\n"
+msgstr "Error: \"%s\" is a directory, but \"%s\" is a file.\n"
+
+#: testanjuta.c:769
+#: testanjuta.c:772
+#: instrans.php:769
+#: instrans.php:772
+#: testanjuta.php:769
+#: testanjuta.php:772
+msgid ""
+"Deben ser el mismo tipo.\n"
+"\n"
+msgstr ""
+"They should be the same.\n"
+"\n"
+
+#: testanjuta.c:771
+#: instrans.php:771
+#: testanjuta.php:771
+#, c-format
+msgid "Error: \"%s\" es un archivo, pero \"%s\" es un directorio.\n"
+msgstr "Error: \"%s\" is a file, but \"%s\" is a directory.\n"
+
+#: testanjuta.c:862
+#: instrans.php:862
+#: testanjuta.php:862
+#, c-format
+msgid ""
+"Error: Necesita usar \"%s\" para especificar el %s de la opción %s\n"
+"\n"
+msgstr ""
+"Error: Need to use \"%s\" in order to specify the %s in the option %s.\n"
+"\n"
+
+#: testanjuta.c:971
+#: instrans.php:971
+#: testanjuta.php:971
+#, fuzzy, c-format
+msgid "Error escribiendo al archivo log \"%s\"."
+msgstr "Error writing to the log file \"%s\".\n"
+
+#: testanjuta.c:1035
+#: testanjuta.c:1167
+#: instrans.php:1035
+#: instrans.php:1167
+#: testanjuta.php:1035
+#: testanjuta.php:1167
+#, fuzzy, c-format
+msgid "Error: No puede abrir el archivo \"%s\"."
+msgstr "Error: Unable to open the file \"%s\".\n"
+
+#: testanjuta.c:1058
+#: testanjuta.c:1187
+#: testanjuta.c:1261
+#: instrans.php:1058
+#: instrans.php:1187
+#: instrans.php:1261
+#: testanjuta.php:1058
+#: testanjuta.php:1187
+#: testanjuta.php:1261
+#, fuzzy, c-format
+msgid "Error leyendo archivo \"%s\"."
+msgstr "Error reading the file \"%s\".\n"
+
+#: testanjuta.c:1078
+#: testanjuta.c:1207
+#: testanjuta.c:1222
+#: testanjuta.c:1276
+#: testanjuta.c:1310
+#: instrans.php:1078
+#: instrans.php:1207
+#: instrans.php:1222
+#: instrans.php:1276
+#: instrans.php:1310
+#: testanjuta.php:1078
+#: testanjuta.php:1207
+#: testanjuta.php:1222
+#: testanjuta.php:1276
+#: testanjuta.php:1310
+#, c-format
+msgid "Error de sintaxis en línea %d del archivo \"%s\"\n"
+msgstr "Syntax error in line %d of file \"%s\"\n"
+
+#: testanjuta.c:1079
+#: testanjuta.c:1208
+#: testanjuta.c:1311
+#: instrans.php:1079
+#: instrans.php:1208
+#: instrans.php:1311
+#: testanjuta.php:1079
+#: testanjuta.php:1208
+#: testanjuta.php:1311
+#, c-format
+msgid ""
+"No hay un msgstr definido para el msgid \"%s\"\n"
+"\n"
+msgstr ""
+"There is not a msgstr defined for the msgid \"%s\"\n"
+"\n"
+
+#: testanjuta.c:1095
+#: testanjuta.c:1273
+#: instrans.php:1095
+#: instrans.php:1273
+#: testanjuta.php:1095
+#: testanjuta.php:1273
+#, fuzzy, c-format
+msgid ""
+"Error de sintaxis en línea %d del archivo \"%s\"\n"
+"%s\n"
+"Línea: %s\n"
+"\n"
+msgstr "Syntax error in line %d of file \"%s\"\n"
+
+#: testanjuta.c:1107
+#: instrans.php:1107
+#: testanjuta.php:1107
+#, fuzzy, c-format
+msgid "Aviso: Archivo \"%s\" no contiene ningunos objetos PO.\n"
+msgstr "Error: File \"%s\" does not have any PO phrases."
+
+#: testanjuta.c:1110
+#: instrans.php:1110
+#: testanjuta.php:1110
+#, fuzzy, c-format
+msgid "Error: Archivo \"%s\" no contiene ningunos objetos PO."
+msgstr "Error: File \"%s\" does not have any PO phrases."
+
+#: testanjuta.c:1116
+#: testanjuta.c:1502
+#: testanjuta.c:1508
+#: instrans.php:1116
+#: instrans.php:1502
+#: instrans.php:1508
+#: testanjuta.php:1116
+#: testanjuta.php:1502
+#: testanjuta.php:1508
+#, c-format
+msgid "%d líneas, %d objetos PO y %d errores de sintaxis leido del archivo \"%s\"\n"
+msgstr "%d lines, %d PO objects and %d syntax errors read from file \"%s\"\n"
+
+#: testanjuta.c:1223
+#: instrans.php:1223
+#: testanjuta.php:1223
+#, fuzzy, c-format
+msgid ""
+"%s\n"
+"Línea: %s\n"
+"\n"
+msgstr ""
+"%s\n"
+"Line: %s\n"
+
+#: testanjuta.c:1229
+#: instrans.php:1229
+#: testanjuta.php:1229
+#, c-format
+msgid "Error: Archivo \"%s\" no contiene ningunas frases PO."
+msgstr "Error: File \"%s\" does not have any PO phrases."
+
+#: testanjuta.c:1236
+#: instrans.php:1236
+#: testanjuta.php:1236
+#, fuzzy, c-format
+msgid "Error: No puede abrir archivo \"%s\" para leerlo."
+msgstr "Error: Unable to open file \"%s\" in order to read it.\n"
+
+#: testanjuta.c:1243
+#: instrans.php:1243
+#: testanjuta.php:1243
+#, fuzzy
+msgid "Error: No puede crear un archivo temporario."
+msgstr "Error: Unable to create a temporary file.\n"
+
+#: testanjuta.c:1248
+#: instrans.php:1248
+#: testanjuta.php:1248
+#, fuzzy
+msgid "Error: No puede abrir un archivo temporario para escribirlo."
+msgstr "Error: Unable to open a temporary file in order to write in it.\n"
+
+#: testanjuta.c:1277
+#: instrans.php:1277
+#: testanjuta.php:1277
+#, c-format
+msgid ""
+"%s\n"
+"Línea: %s\n"
+"Chequee línea %d del archivo \"%s\".\n"
+"\n"
+msgstr ""
+"%s\n"
+"Line: %s\n"
+"Check line %d of file \"%s\".\n"
+"\n"
+
+#: testanjuta.c:1292
+#: testanjuta.c:1473
+#: instrans.php:1292
+#: instrans.php:1473
+#: testanjuta.php:1292
+#: testanjuta.php:1473
+#, c-format
+msgid "Error escribiendo al archivo temporario \"%s\"."
+msgstr "Error writing to temporary file \"%s\"."
+
+#: testanjuta.c:1315
+#: instrans.php:1315
+#: testanjuta.php:1315
+#, c-format
+msgid "Error de sintaxis en línea %d de archivo \"%s\"\n"
+msgstr "Syntax error in line %d of file \"%s\".\n"
+
+#: testanjuta.c:1316
+#: instrans.php:1316
+#: testanjuta.php:1316
+#, c-format
+msgid "No hay un msgstr definido para el msgid \"%s\"\n"
+msgstr "There is no defined msgstr for the msgid \"%s\"\n"
+
+#: testanjuta.c:1317
+#: instrans.php:1317
+#: testanjuta.php:1317
+#, c-format
+msgid ""
+"Chequee línea %d del archivo \"%d\".\n"
+"\n"
+msgstr ""
+"Check line %d of file \"%d\".\n"
+"\n"
+
+#: testanjuta.c:1410
+#: testanjuta.c:1459
+#: instrans.php:1410
+#: instrans.php:1459
+#: testanjuta.php:1410
+#: testanjuta.php:1459
+#, c-format
+msgid "Archivo \"%s\" línea %d:\n"
+msgstr "File \"%s\" line %d:\n"
+
+#: testanjuta.c:1490
+#: instrans.php:1490
+#: testanjuta.php:1490
+#, fuzzy, c-format
+msgid "Error: No puede borrar el archivo \"%s\" para reemplazarlo."
+msgstr "Error: Unable to erase file \"%s\" in order to replace it.\n"
+
+#: testanjuta.c:1495
+#: instrans.php:1495
+#: testanjuta.php:1495
+#, fuzzy
+msgid "Error: No puede dar un nuevo nombre a un archivo temporario."
+msgstr "Error: Unable to give a new name to a temporary file.\n"
+
+#: testanjuta.c:1501
+#: instrans.php:1501
+#: testanjuta.php:1501
+#, c-format
+msgid ""
+"\n"
+"Resumen de \"%s\":\n"
+msgstr ""
+"\n"
+"Summary of \"%s\":\n"
+
+#: testanjuta.c:1511
+#: instrans.php:1511
+#: testanjuta.php:1511
+#, c-format
+msgid "%d líneas y %d objetos PO escrito en el archivo \"%s\"\n"
+msgstr "%d lines and %d PO objets written in file \"%s\"\n"
+
+#: testanjuta.c:1518
+#: instrans.php:1518
+#: testanjuta.php:1518
+#, c-format
+msgid "Tiempo de procesamiento: %f segundos.\n"
+msgstr "Processing time: %f seconds.\n"
+
+#: testanjuta.c:1524
+#: instrans.php:1524
+#: testanjuta.php:1524
+#, c-format
+msgid "%d objetos PO escrito en el archivo \"%s\"\n"
+msgstr "%d PO objects written in the file \"%s\"\n"
+
+#: testanjuta.c:1568
+#: instrans.php:1555
+#: instrans.php:1598
+#: testanjuta.php:1568
+#, fuzzy, c-format
+msgid "Error: No puede abrir el directorio \"%s\"."
+msgstr "Error: Unable to open the directory \"%s\".\n"
+
+#: testanjuta.c:1584
+#: instrans.php:1614
+#: testanjuta.php:1584
+#, fuzzy, c-format
+msgid "Error: No puede crear directorio \"%s\"."
+msgstr "Error: Unable to create the directory \"%s\".\n"
+
+#: testanjuta.c:1602
+#: instrans.php:1632
+#: testanjuta.php:1602
+#, c-format
+msgid "Error: No puede copiar archivo \"%s\"."
+msgstr "Error: Unable to copy the file \"%s\"."
+
+#: testanjuta.c:1645
+#: instrans.php:1675
+#: testanjuta.php:1645
+#, fuzzy
+msgid "help-es.txt"
+msgstr "readme-en.txt"
+
+#: testanjuta.c:1647
+#: instrans.php:1677
+#: testanjuta.php:1647
+#, fuzzy
+msgid "Error: No puede abrir el archivo \"help-es.txt\".\n"
+msgstr "Error: Unable to open the file \"%s\".\n"
+
+#: help.php:7
+msgid "Instrans inserta frases traducidas de archivo(s) PO en otro(s) archivo(s) PO.\n"
+msgstr "Instrans inserts translated frases from PO file(s) into other PO file(s).\n"
+
+#: help.php:8
+msgid "FORMATO:\n"
+msgstr "FORMAT:\n"
+
+#: help.php:9
+#, fuzzy
+msgid "   php instrans.php [OPCIONES] ORIGINAL-PO TRASLACIONES-PO [NUEVO-PO]\n"
+msgstr "   php instrans.php [OPTIONS] ORIGINAL-PO TRANSLATIONS-PO [NEW-PO]\n"
+
+#: help.php:10
+msgid "OPCIONES: \n"
+msgstr "OPTIONS: \n"
+
+#: help.php:11
+msgid "-m | --msgstr     Insertar las frases traducidas en los msgstr que son vacíos.\n"
+msgstr "-m | --msgstr     Insert the translated phrases into the msgstr which are not empty.\n"
+
+#: help.php:12
+msgid "-b | --bilingual [=SEPARADOR]   Pegar frases traducidas al fin de msgstr \n"
+msgstr "-b | --bilingual [=SEPARATOR]   Append translated phrases to the end of the existing\n"
+
+#: help.php:13
+msgid "                  existentes para formar frases bilinguales. Dividir las dos \n"
+msgstr "                  msgstr to form bilingual phrases. Divide the two \n"
+
+#: help.php:14
+msgid "                  frases por un SEPARADOR que es \" * \" por omisión. \n"
+msgstr "                  phrases with a SEPARATOR which is \" * \" by default. \n"
+
+#: help.php:15
+msgid "-c | --comment [=IDIOMA]   Insertar frases traducidas como comentarios en la \n"
+msgstr "-c | --comment [=LANGUAGE]   Insert translated phrases as comments in the \n"
+
+#: help.php:16
+msgid "                  forma: # [IDIOMA] \"FRASE TRADUCIDA\" Si no specifica el \n"
+msgstr "                  form: # [LANGUAGE] \"TRANSLATED PHRASE\" It the LANGUAGE is \n"
+
+#: help.php:17
+msgid "                  IDIOMA, por omisión es el nombre del archivo TRASLACIONES-PO.\n"
+msgstr "                  specified, by default it is the name of the file TRANSLATIONS-PO.\n"
+
+#: help.php:18
+msgid "-s | --statusbar [=FRASE-MENU FRASE-BARRA-DE-ESTADO] \n"
+msgstr "-s | --statusbar [=MENU-PHRASE STATUS-BAR-PHRASE] \n"
+
+#: help.php:19
+msgid "                  Insertar frases traducidas del menú en la barra del estado. \n"
+msgstr "                  Insert translated frases from the menu into the status bar. \n"
+
+#: help.php:20
+msgid "                  Si se encuentra un comentario automático que contiene la \n"
+msgstr "                  If a automatic comment is found which contains the \n"
+
+#: help.php:21
+msgid "                  FRASE-MENU, busca otro PO con la correspondiente \n"
+msgstr "                  MENU PHRASE, search for another PO object with the corresponding\n"
+
+#: help.php:22
+msgid "                  FRASE-BARRA-DE-ESTADO y inserta la frase PO allí. Por omisión\n"
+msgstr "                  STATUS-BAR-PHRASE and insert the PO phrase there. By default\n"
+
+#: help.php:23
+msgid "                  FRASE-MENU es \"MENU\" y FRASE-BARRA-DE-ESTADO es \"STATUSBAR\".\n"
+msgstr "                 MENU-PHRASE is \"MENU\" and the STATUS-BAR-PHRASE is \"STATUSBAR\".\n"
+
+#: help.php:24
+msgid "-o | --overwrite  Reemplazar frases traducidas existentes. Sin esta opción,\n"
+msgstr "-o | --overwrite  Overwrite existing translated phrases.  Without this option,\n"
+
+#: help.php:25
+msgid "                  sólo inserta la frase traducida cuando el msgstr es vacío.\n"
+msgstr "                  translated phrases will only be inserted when the msgstr is empty.\n"
+
+#: help.php:26
+msgid "-n | --no-strip   No eliminar los signos & y las variables C/C++ de las frases \n"
+msgstr "-n | --no-strip   Do not strip ampersands (&) and C/C++ variables from the translated \n"
+
+#: help.php:27
+msgid "                  traducidas en las inserciones --bilingual y --statusbar. \n"
+msgstr "                  phrases in the --bilingual and --statusbar insertions. \n"
+
+#: help.php:28
+#, fuzzy
+msgid "-r | --recursive  Si ORIGINAL-PO es un directorio, procesa todos los \n"
+msgstr "-r | --recursive  If ORIGINAL-PO is a directory, process all the\n"
+
+#: help.php:29
+msgid "                  subdirectorios también. \n"
+msgstr "                  subdirectories also. \n"
+
+#: help.php:30
+msgid "-v | --verbose    Mostrar avisos y más información. \n"
+msgstr "-v | --verbose    Show warnings and more information. \n"
+
+#: help.php:31
+#, fuzzy
+msgid "-q | --quiet      No mostrar ningunas avisos or mensajes de errores. \n"
+msgstr "-q | --quiet      Do not show any screen messages. \n"
+
+#: help.php:32
+msgid "-l | --log [=ARCHIVO]   Desviar las mensajes de pantalla a un archivo que es \n"
+msgstr "-l | --log [=FILE]   Redirect all screen messages to a log file which is \n"
+
+#: help.php:33
+msgid "                  \"instrans-log.txt\" por omisión. \n"
+msgstr "                  \"instrans-log.txt\" by default. \n"
+
+#: help.php:34
+msgid "-f | --interface = XX   Especificar la lengua de la interfaz del usuario.\n"
+msgstr ""
+
+#: help.php:35
+msgid " \n"
+msgstr " \n"
+
+#: help.php:36
+#, fuzzy
+msgid "ORIGINAL-PO       El archivo PO original. Si es un directorio va a procesar \n"
+msgstr "ORIGINAL-PO       The original PO file. If it is a directory, all the PO files \n"
+
+#: help.php:37
+#, fuzzy
+msgid "                  todos los archivos PO adentro del directorio. \n"
+msgstr "                  in the directory will be processed. \n"
+
+#: help.php:38
+msgid "TRASLACIONES-PO   El archivo o directorio PO que contiene las frases \n"
+msgstr "TRANSLATIONS-PO   The PO file or directory which contains the translated \n"
+
+#: help.php:39
+#, fuzzy
+msgid "                  traducidas que será insertado en el ORIGINAL-PO (o en \n"
+msgstr "                  phrases which will be inserted into the ORIGINAL-PO (or \n"
+
+#: help.php:40
+#, fuzzy
+msgid "                  NUEVO-PO). \n"
+msgstr "                  the NEW-PO). \n"
+
+#: help.php:41
+#, fuzzy
+msgid "NUEVO-PO          [opcional] Si no quiere reemplazar el ORIGINAL-PO, provea \n"
+msgstr "NEW-PO          [optional] To not overwrite the ORIGINAL-PO, provide \n"
+
+#: help.php:42
+msgid "                  un nombre de un neuvo archivo o directorio para escribir. \n"
+msgstr "                  the name of a new file or directory to be created. \n"
+
+#: help.php:43
+#, fuzzy
+msgid "Para más información y ejemplos:    php instrans.php --info"
+msgstr "For more information and examples:   php instrans.php --info \n"
+

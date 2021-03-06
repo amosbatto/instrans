@@ -1,0 +1,327 @@
+﻿<?php
+$aGetText = array( 
+
+#: instrans.php:108
+"Instrans inserta frases traducidas de archivo(s) PO en otro(s) archivo(s) PO.\n" .
+"FORMATO:\n" .
+"   php instrans.php [OPCIONES] ORIGINAL-PO TRASLACIONES-PO [NUEVO-PO]\n" .
+"OPCIONES: \n" .
+"-m | --msgstr     Insertar las frases traducidas en los msgstr que son vacíos.\n" .
+"-b | --bilingual [=SEPARADOR]   Pegar frases traducidas al fin de msgstr \n" .
+"                  existentes para formar frases bilinguales. Dividir las dos \n" .
+"                  frases por un SEPARADOR que es \" * \" por omisión. \n" .
+"-c | --comment [=IDIOMA]   Insertar frases traducidas como comentarios en la \n" .
+"                  forma: # [IDIOMA] \"FRASE TRADUCIDA\" Si no specifica el \n" .
+"                  IDIOMA, por omisión es el nombre del archivo TRASLACIONES-PO.\n" .
+"-s | --statusbar [=FRASE-MENU FRASE-BARRA-DE-ESTADO] \n" .
+"                  Insertar frases traducidas del menú en la barra del estado. \n" .
+"                  Si se encuentra un comentario automático que contiene la \n" .
+"                  FRASE-MENU, busca otro PO con la correspondiente \n" .
+"                  FRASE-BARRA-DE-ESTADO y inserta la frase PO allí. Por omisión\n" .
+"                  FRASE-MENU es \"MENU\" y FRASE-BARRA-DE-ESTADO es \"STATUSBAR\".\n" .
+"-o | --overwrite  Reemplazar frases traducidas existentes. Sin esta opción,\n" .
+"                  sólo inserta la frase traducida cuando el msgstr es vacío.\n" .
+"-n | --no-strip   No eliminar los signos & y las variables C/C++ de las frases \n" .
+"                  traducidas en las inserciones --bilingual y --statusbar. \n" .
+"-r | --recursive  Si ORIGINAL-PO es un directorio, procesa todos los \n" . 
+"                  subdirectorios también. \n" .  
+"-v | --verbose    Mostrar avisos y más información. \n" .
+"-q | --quiet      No mostrar ningunas avisos or mensajes de errores. \n" .
+"-l | --log [=ARCHIVO]   Desviar las mensajes de pantalla a un archivo que es \n" .
+"                  \"instrans-log.txt\" por omisión. \n" .
+"-f | --interface = XX   Especificar la lengua de la interfaz del usuario.\n" .
+" \n" .
+"ORIGINAL-PO       El archivo PO original. Si es un directorio va a procesar \n" .
+"                  todos los archivos PO adentro del directorio. \n" .
+"TRASLACIONES-PO   El archivo o directorio PO que contiene las frases \n" .
+"                  traducidas que será insertado en el ORIGINAL-PO (o en \n" .
+"                  NUEVO-PO). \n" .
+"NUEVO-PO          [opcional] Si no quiere reemplazar el ORIGINAL-PO, provea \n" .
+"                  un nombre de un neuvo archivo o directorio para escribir. \n" .
+"Para más información y ejemplos:    php instrans.php --info" =>
+
+"Instrans inserts translated frases from PO file(s) into other PO file(s).\n" .
+"   php instrans.php [OPTIONS] ORIGINAL-PO TRANSLATIONS-PO [NEW-PO]\n" .
+"OPTIONS: \n" .
+"-m | --msgstr     Insert the translated phrases in empty msgstr's.\n" .
+"-b | --bilingual [=SEPARATOR]   Append translated phrases to the end of the \n" .
+"                  existing msgstr to form bilingual phrases. Divide the two \n" .
+"                  phrases with a SEPARATOR which is \" * \" by default. \n" .
+"-c | --comment [=LANGUAGE]  Insert translated phrases as comments in the form:\n" .
+"                  # [LANGUAGE] \"TRANSLATED PHRASE\"  If not specified, the \n" .
+"                  LANGUAGE is the name of the file TRANSLATIONS-PO by default.\n" .
+"-s | --statusbar [=MENU-PHRASE STATUS-BAR-PHRASE] \n" .
+"                  Insert translated frases from the menu into the status bar. \n" .
+"                  If an automatic comment is found containing the MENU-PHRASE,\n" .
+"                  search for another PO object with the corresponding\n" .
+"                  STATUS-BAR-PHRASE and insert the translated phrase there. By\n" .
+"                  default MENU-PHRASE is \"MENU\" and STATUS-BAR-PHRASE is \n" .
+"                  \"STATUSBAR\"\n" .
+"-o | --overwrite  Overwrite existing translated phrases.  Without this option,\n" .
+"                  translated phrases will only be inserted in empty msgstr's.\n" .
+"-n | --no-strip   Do not strip ampersands (&) and C/C++ variables from the \n" .
+"                  translated phrases in --bilingual and --statusbar insertions\n" .
+"-r | --recursive  If ORIGINAL-PO is a directory, process all the\n" .
+"                  subdirectories also. \n" .
+"-v | --verbose    Show warnings and more information. \n" .
+"-q | --quiet      Do not show any warning or error messages. \n" .
+"-l | --log [=FILE]   Redirect all screen messages to a log file which is \n" .
+"                  \"instrans-log.txt\" by default. \n" .
+"-f | --interface = XX   Specify the user interface language for instrans.\n" .
+" \n" .
+"ORIGINAL-PO       The original PO file. If it is a directory, all the PO files \n" .
+"                  in the directory will be processed. \n" . 
+"TRANSLATIONS-PO   The PO file or directory which contains the translated \n" .
+"                  phrases which will be inserted into the ORIGINAL-PO (or \n" .
+"                  the NEW-PO). \n" .
+"NEW-PO            [optional] To not overwrite the ORIGINAL-PO, provide \n" .
+"                  the name of a new file or directory to be written. \n" .
+"For more information and examples:   php instrans.php --info",
+
+#: instrans.php:160
+"Error: No puede abrir el archivo log \"%s\"." =>
+"Error: Can not open the log file \"%s\".",
+
+#: instrans.php:176
+"Error: No puede crear el directorio temporario \"%s\"." =>
+"Error: Can not create the temporary directory \"%s\".",
+
+#: instrans.php:186
+"Error: No puede sobre-escribir el directorio \"%s\"." =>
+"Error: Can not overwrite the directory \"%s\".",
+
+#: instrans.php:191
+"Error: No puede renombrar el directorio \"%s\"." =>
+"Error: Cannot rename the directory \"%s\".",
+
+#: instrans.php:196
+"\nResumen de procesamiento total:\n" =>
+"\nSummary of total processing:\n",
+
+#: instrans.php:198-200
+"%d líneas, %d objetos PO y %d errores de sintaxis leido de \"%s\"\n" . 
+"%d líneas, %d objetos PO y %d errores de sintaxis leido de \"%s\"\n" .
+"%d líneas y %d objetos PO escrito en \"%s\"\n" =>
+
+"%d lines, %d PO objects and %d syntax errors read from \"%s\"\n" .
+"%d lines, %d PO objects and %d syntax errors read from \"%s\"\n" .
+"%d lines and %d PO objects written in \"%s\"\n",
+
+#: instrans.php:206
+#: instrans.php:1307
+"%d signos \"&\" y %d variables quitado.\n" =>
+"%d ampersands (&) and %d variables stripped.\n",
+
+#: instrans.php:210
+"Tiempo de procesamiento total: %f segundos.\n" =>
+"Total processing time: %f seconds.\n",
+
+#: instrans.php:323
+"El msgid todavia no es definido." =>
+"The msgid is not yet defined.",
+
+#: instrans.php:329
+"Línea no termina en comillas." =>
+"Line does not end in double quotes.",
+
+#: instrans.php:357
+"Línea no tiene forma conocida." =>
+"Line does not have a known form.",
+
+#: instrans.php:473
+"%d variable fue reemplazado en msgstr \"%s\"\n" =>
+"%d variable was replaced in msgstr \"%s\"\n",
+
+#: instrans.php:473
+"%d variables fueron reemplazado en msgstr \"%s\"\n" =>
+"%d variables were replaced in msgstr \"%s\"\n",
+
+#: instrans.php:584
+"readme-es.txt" =>
+"readme-en.txt",
+
+#: instrans.php:587
+"Error: Falta argumentos.\n\n" =>
+"Error: Not enough arguments.\n\n",
+
+#: instrans.php:626
+"Error: Hay que especificar la FRASE-BARRA-DE-ESTADO " .
+"de la opción --statusbar.\n\n" =>
+
+"Error: Must specify the STATUS-BAR-PHRASE " .
+"for the option --statusbar.\n\n",
+
+"IDIOMA" =>
+"LANGUAGE",
+
+#: instrans.php:627
+"Aviso: Lengua de interfaz \"%s\" no es disponible.\n". 
+"En su lugar usará lengua \"%s\".\n" =>
+
+"Warning: Interface language \"%s\" is not available. \n" . 
+"Will use language \"%s\" instead.\n",
+
+"FRASE-MENU" =>
+"FRASE-MENU",
+
+"SEPARADOR" =>
+"SEPARADOR",
+
+"ARCHIVO" =>
+"ARQUIVO",
+
+#: instrans.php:661
+"Error: Hay que especificar ORIGINAL-PO y TRASLACIONES-PO.\n\n" =>
+"Error: Must specify the ORIGINAL-PO and the TRANSLATIONS-PO.\n\n",
+
+#: instrans.php:663
+"Error: Demasiado argumentos\n\n" =>
+"Error: Too many arguments\n\n",
+
+#: instrans.php:664
+"Error: Hay que especificar TRASLACIONES-PO.\n\n" =>
+"Error: Must specify the TRANSLATIONS-PO.\n\n",
+
+#: instrans.php:667
+"Error: No se puede combinar opciones --msgstr y --bilingual.\n\n" =>
+"Error: Can not combine the options --msgstr and --bilingual.\n\n",
+
+#: instrans.php:672
+"Error: Archivo o directorio de ORIGINAL-PO \"%s\" no existe." =>
+"Error: The file or directory ORIGINAL-PO \"%s\" does not exist.",
+
+#: instrans.php:676
+"Error: Archivo o directorio de TRASLACIONES-PO \"%s\" no existe." =>
+"Error: The file or directory TRANSLATIONS-PO \"%s\" does not exist.",
+
+#: instrans.php:692
+"Error: No puede crear el directorio NUEVO-PO \"%s\"." =>
+"Error: Unable to create the NEW-PO directory \"%s\".",
+
+#: instrans.php:705
+"Error: \"%s\" es un directorio, pero \"%s\" es un archivo.\n" .
+"Deben ser el mismo tipo.\n\n" =>
+
+"Error: \"%s\" is a directory, but \"%s\" is a file.\n" .
+"They should be the same type.\n\n",
+
+#: instrans.php:708
+"Error: \"%s\" es un archivo, pero \"%s\" es un directorio.\n" .
+"Deben ser el mismo tipo.\n\n" =>
+
+"Error: \"%s\" is a file, but \"%s\" is a directory.\n" .
+"They should be the same type.\n\n",
+
+#: instrans.php:792
+"Error: Necesita usar \"%s\" para especificar el %s de la opción %s\n\n" =>
+"Error: Need to use \"%s\" in order to specify the %s in the option %s.\n\n",
+
+#: instrans.php:899
+"Error escribiendo al archivo log \"%s\"." =>
+"Error writing to the log file \"%s\".",
+
+#: instrans.php:965
+"Error: No puede abrir el archivo \"%s\"." =>
+"Error: Unable to open the file \"%s\".",
+
+#: instrans.php:1003
+#: instrans.php:1111
+"Error de sintaxis en línea %d del archivo \"%s\"\n" .
+"No hay un msgstr definido para el msgid \"%s\"\n\n" =>
+
+"Syntax error in line %d of file \"%s\"\n" .
+"There is not a msgstr defined for the msgid \"%s\"\n\n",
+
+#: instrans.php:1018
+#: instrans.php:1067
+"Error de sintaxis en línea %d del archivo \"%s\"\n%s\nLínea: %s\n\n" =>
+"Syntax error in line %d of file \"%s\"\n%s\nLine: %s\n\n",
+
+#: instrans.php:1072
+"Error de sintaxis en línea %d del archivo \"%s\"\n" .
+"%s\nLínea: %s\nChequee línea %d del archivo \"%s\".\n\n" =>
+
+"Syntax error in line %d of file \"%s\"\n" .
+"%s\nLine: %s\nCheck line %d of file \"%s\".\n\n",
+
+#: instrans.php:983
+#: instrans.php:1057
+"Error leyendo archivo \"%s\"." =>
+"Error reading the file \"%s\".",
+
+#: instrans.php:1025
+"Error: Archivo \"%s\" no contiene ningunas frases PO." =>
+"Error: File \"%s\" does not have any PO phrases.",
+
+#: instrans.php:1032
+"Error: No puede abrir archivo \"%s\" para leerlo." =>
+"Error: Unable to open file \"%s\" in order to read it.",
+
+#: instrans.php:1039
+"Error: No puede crear un archivo temporario." =>
+"Error: Unable to create a temporary file.",
+
+#: instrans.php:1044
+"Error: No puede abrir un archivo temporario para escribirlo." =>
+"Error: Unable to open a temporary file in order to write in it.",
+
+#: instrans.php:1088
+#: instrans.php:1269
+"Error escribiendo al archivo temporario \"%s\"." =>
+"Error writing to temporary file \"%s\".",
+
+#: instrans.php:1113
+"Error de sintaxis en línea %d de archivo \"%s\"\n" . 
+"No hay un msgstr definido para el msgid \"%s\"\n" . 
+"Chequee línea %d del archivo \"%d\".\n\n" =>
+
+"Syntax error in line %d of file \"%s\".\n" .
+"There is no defined msgstr for the msgid \"%s\"\n" .
+"Check line %d of file \"%d\".\n\n",
+
+#: instrans.php:1206
+#: instrans.php:1255
+"Archivo \"%s\" línea %d:\n" =>
+"File \"%s\" line %d:\n",
+
+#: instrans.php:1287
+"Error: No puede borrar el archivo \"%s\" para reemplazarlo." =>
+"Error: Unable to erase file \"%s\" in order to replace it.",
+
+#: instrans.php:1292
+"Error: No puede dar un nuevo nombre a un archivo temporario." =>
+"Error: Unable to give a new name to a temporary file.",
+
+#: instrans.php:1298-1301
+"\nResumen de \"%s\":\n" .
+"%d líneas, %d objetos PO y %d errores de sintaxis leido del archivo \"%s\"\n" . 
+"%d líneas, %d objetos PO y %d errores de sintaxis leido del archivo \"%s\"\n" .
+"%d líneas y %d objetos PO escrito en el archivo \"%s\"\n" =>
+
+"\nSummary of \"%s\":\n" .
+"%d lines, %d PO objects and %d syntax errors read from file \"%s\"\n" .
+"%d lines, %d PO objects and %d syntax errors read from file \"%s\"\n" .
+"%d lines and %d PO objects written to file \"%s\"\n",
+
+#: instrans.php:1310
+"Tiempo de procesamiento: %f segundos.\n" =>
+"Processing time: %f seconds.\n",
+
+#: instrans.php:1316
+"%d objetos PO escrito en el archivo \"%s\"\n" =>
+"%d PO objects written in the file \"%s\"\n",
+
+#: instrans.php:1353
+"Error: No puede abrir el directorio \"%s\"." =>
+"Error: Unable to open the directory \"%s\".",
+
+#: instrans.php:1369
+"Error: No puede crear directorio \"%s\"." =>
+"Error: Unable to create the directory \"%s\".",
+
+#: instrans.php:1384
+"Error: No puede copiar archivo \"%s\"." =>
+"Error: Unable to copy the file \"%s\"."
+);
+
+?>

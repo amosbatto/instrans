@@ -1,0 +1,45 @@
+﻿Instrans inserts translated frases from PO file(s) into other PO file(s).
+   php instrans.php [OPTIONS] ORIGINAL-PO TRANSLATIONS-PO [NEW-PO]
+OPTIONS: 
+-m | --msgstr     Insert the translated phrases in empty msgstr's.
+-b | --bilingual [=SEPARATOR]   Append translated phrases to the end of the 
+                  existing msgstr to form bilingual phrases. Divide the two 
+                  phrases with a SEPARATOR which is " * " by default. 
+-c | --comment [=LANGUAGE]  Insert translated phrases as comments in the form:
+                  # [LANGUAGE] "TRANSLATED PHRASE"  If not specified, the 
+                  LANGUAGE is the name of the file TRANSLATIONS-PO by default.
+-s | --statusbar [=MENU-STRING STATUS-BAR-STRING] 
+                  Insert translated frases from the menu into the status bar. 
+                  If an automatic comment is found containing the MENU-PHRASE,
+                  search for another PO object with the corresponding
+                  STATUS-BAR-PHRASE and insert the translated phrase there. By
+                  default MENU-PHRASE is "MENU" and STATUS-BAR-PHRASE is 
+                  "STATUSBAR"
+-o | --overwrite  Overwrite existing translated phrases.  Without this option,
+                  translated phrases will only be inserted in empty msgstr's.
+-r | --recursive  If ORIGINAL-PO is a directory, process all the
+                  subdirectories also. 
+-e | --search     Search for translated phrases in any file or directory in 
+                  TRANSLATIONS-PO. 
+-x | --strip [=STRING]   Strip STRING from the translated phrase in insertions
+                  --bilingual and --statusbar. If STRING isn't specified,
+                  ampersands will be stripped. STRING can be a Perl expression.
+-p | --replace [=FIND REPLACEMENT]    Replace FIND with REMPLACEMENT in the
+                  translated phrase in insertions --bilingual and --statusbar. 
+                  If FIND and REPLACEMENT are not specified, programming  
+                  variables will be replaced with "@#@x@#@". Perl expressions
+                  can be used. 
+-v | --verbose    Show warnings and more information. 
+-q | --quiet      Do not show any warning or error messages. 
+-l | --log [=FILE]   Redirect all screen messages to a log file which is 
+                  "instrans-log.txt" by default. 
+-f | --interface = XX   Specify the user interface language for instrans.
+ 
+ORIGINAL-PO       The original PO file. If it is a directory, all the PO files 
+                  in the directory will be processed. \n" . 
+TRANSLATIONS-PO   The PO file or directory which contains the translated 
+                  phrases which will be inserted into the ORIGINAL-PO (or 
+                  the NEW-PO). 
+NEW-PO            [optional] To not overwrite the ORIGINAL-PO, provide 
+                  the name of a new file or directory to be written. 
+For more information and examples:   php instrans.php --info

@@ -1,0 +1,44 @@
+instrans insere frases traduzidas de arquivo(s) PO em outro(s) arquivo(s) PO. 
+FORMATO: 
+   php instrans.php [OPÇÕES] ORIGINAL-PO TRANSLACÕES-PO [NOVO-PO] 
+Opções: 
+-m | --msgstr     Inserir as frases traduzidas nos msgstr que não contem nada. 
+-b | --bilingual [=SEPARADOR]    Pegar frases traduzidas ao fim de msgstr  
+                  existentes para formar frases bilingues. Divide as dois frases
+                  por um SEPARADOR que é " * " por omissão. 
+-c | --comment [=LÍNGUA]    Inserir frases traduzidas como comentários na forma:
+                  #  [LÍNGUA] "FRASE-TRADUZIDA"  Si não se específica a LÍNGUA,
+                  por omissão é o nome de TRANSLACÕES-PO. 
+-s | --statusbar [=FRASE-MENU FRASE-BARRA-DE-ESTADO]   Inserir frases traduzidas
+                  do menu na barra de estado. Si encontra um comentário 
+                  automático que contem a FRASE-MENU, procura outro objecto PO 
+                  com a correspondente FRASE-BARRA-DE-ESTADO e insere a frase 
+                  traduzida lá. Por omissão FRASE-MENU é "MENU" e FRASE-BARRA-
+                  DE-ESTADO é "STATUSBAR". Use esta opção com cuidado. 
+-o | --overwrite  Substituir frases traduzidas existentes. Sim esta opção, 
+                  só insere a frase traduzida quando o msgstr não contem nada.
+-r | --recursive  Processar todos os subdiretórios em ORIGINAL-PO e 
+                  TRASLACÕES-PO. 
+-e | --search     Procurar frases traduzidas en qualquer archivo o directorio en
+                  TRANSLAÇÕES-PO.
+-x | --strip [=CADEIA]   Eliminar a CADEIRA da frase traduzida em inserções
+                  --bilingual e --statusbar. Si não especifica a CADEIRA, os 
+                  signos "&" será eliminado. CADEIRA pode ser uma expressão Perl
+-p | --replace [=PROCURA SUBSTITUÇÃO]    Substituir PROCURA por SUBSTITUÇÃO na
+                  frase traduzida em inserções --bilingual e --statusbar. 
+                  Si não especifica a PROCURA e a SUBSTITUÇÃO, variáveis de 
+                  programação será substituído por "@#@x@#@". Pode usar 
+                  expressões Perl. 
+-v | --verbose    Mostrar avisos e mais informação.
+-q | --quiet      Não mostrar nenhuma mensagem.
+-l | --log [=ARQUIVO]   Desviar as mensagens a uma arquivo. Si não 
+                  se especifica um arquivo, por omissão é "instrans-log.txt"
+-f | --interface = XX   Especificar o idioma da interface de instrans.
+
+ORIGINAL-PO       O arquivo PO original ou directório. Si é um directório vai 
+                  processar todo os arquivos PO adentro do directório.
+TRANSLAÇÕES-PO    O arquivo PO que contem as frases traduzidas que será 
+                  inserido no ORIGINAL-PO (ou opcionalmente no NOVO-PO).
+NOVO-PO           [opcional] Si não quer substituir o ARQUIVO-PO,
+                  entregue um novo nome de arquivo para escrever.
+Para mais informação e exemplos de uso:    php instrans.php --info

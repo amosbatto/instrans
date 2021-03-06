@@ -1,0 +1,2627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+
+  
+  <title>instrans.php documentación</title></head>
+
+<body>
+
+
+<h2><a href="../www/instrans.zip">instrans.php</a>
+-- Software para Insertar Traslaciones</h2>
+
+
+&nbsp;&nbsp;&nbsp; <a href="#INSTALACI%D3N">Instalación</a><br>
+
+
+&nbsp;&nbsp;&nbsp; <a href="#DESCRIPCI%D3N">Descripción</a><br>
+
+
+&nbsp;&nbsp;&nbsp; <a href="#FORMATO">Formato</a><br>
+
+
+&nbsp;&nbsp;&nbsp; <a href="#NOTAS">Notas</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Usando_replace_ins_bilingual">Usando --replace con
+--bilingual inserciones</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Usando_strip_ins_bilingual">Usando --strip con
+--bilingual inserciones</a> <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Ejemplo_con_--statusbar">Opción
+--statusbar</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Procesando_Directorios">Procesando Directorios</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Opci%F3n_--search">Opción --search</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Errores_de_Sintaxis">Errores de sintaxis</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Valor_de_devuelto">Valor de devuelto</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Por_qu%E9_demora_tanto">¿Por
+qué demora tanto?</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Por_qu%E9_usa_tanta_memoria">¿Por
+qué usa tanta memoria?</a><br>
+
+
+&nbsp;&nbsp;&nbsp; <a href="#EJEMPLOS_DE_USO">Ejemplos
+de uso</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Ejemplo_Basic">Ejemplo Basico</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Ejemplo_con_--comment">Ejemplo --comment</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Ejemplo_con_--bilingual">Ejemplo --bilingual</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Ejemplo_con_--statusbar">Ejemplo --statusbar</a><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#Ejemplo_con_--search">Ejemplo --search</a><br>
+
+
+&nbsp;&nbsp;&nbsp; <a href="#LICENCIA_Y_AUTOR">Licencia
+y Autor</a><br>
+
+
+&nbsp;&nbsp;&nbsp; <a href="#DOCUMENTACI%D3N_EN_OTRAS_LENGUAS">Documentación
+en Otras Lenguas</a><br>
+
+
+<br>
+
+
+<br style="font-weight: bold;">
+
+
+<a style="font-weight: bold;" name="INSTALACIÓN"></a><span style="font-weight: bold;">INSTALACIÓN:</span><br>
+
+
+<br>
+
+
+Para usar instrans, necesita PHP 5 con interfaz de línea de
+mandato (command <br>
+
+
+line interface). (Tal vez instrans funcionaría con PHP 4,
+pero no lo he <br>
+
+
+probado.)<br>
+
+
+<br>
+
+
+<span style="font-weight: bold;">MS-Windows:</span><br>
+
+
+Si se usa MS Windows, descargue php-5.X.X-Win32.zip de
+http://www.php.net &nbsp;<br>
+
+
+Descompactelo en un nuevo archivo donde quiere instalarlo y haga doble
+clic en<br>
+
+
+php-5.X.X-installer.exe. Después hay que añadir
+PHP a su variable "Path" para <br>
+
+
+indicar donde se queda PHP. En Windows XP, vaya a
+Inicio-&gt;Configuración-&gt;<br>
+
+
+Panel de control-&gt;Sistema. Bajo la pestaña "Opciones
+Avanzadas", haga clic en <br>
+
+
+"Variables de Entorno" y seleccione "Path" en la caja "Variables del
+Sistema".<br>
+
+
+Haga clic en "Editar" y añada la ruta donde PHP es
+instalado. Por ejemplo, si <br>
+
+
+PHP es instalado en el directorio "C:\Archivos de Programa\PHP5", su
+nueve <br>
+
+
+"Path" puede aparecerse como:<br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+c:\WINDOWS;c:\WINDOWS\System32;c:\Archivos de Programa\PHP5</span><br>
+
+
+<br>
+
+
+En sistemas más viejas, puede cambiar el Path en DOS
+así:<br>
+
+
+<font style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+echo
+$PATH</font><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;
+&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font size="-1"><span style="font-style: italic;"></span></font><font size="-1"><span style="font-style: italic;">[Verifique
+que $PATH exista.]</span></font><br>
+
+
+<font style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+$PATH
+= $PATH + ";C:\Archivos de
+Programa\PHP5"<br>
+
+
+&nbsp;&nbsp;&nbsp;
+echo $PATH</font><span style="font-family: monospace;">
+</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;
+&nbsp;
+</span><small><span style="font-style: italic;">[Verifique
+que $PATH fuese cambiado]</span></small><br>
+
+
+<br>
+
+
+En algunos sistemas, necesita usar la variable "$Path" en lugar de
+"$PATH".<br>
+
+
+<br>
+
+
+Después de instalar PHP 5, descargue y descompacte<br>
+
+
+<a href="http://www.ciber-runa.net/instrans.zip">www.ciber-runa.net/instrans.zip</a>.
+Ahora puede utilizar el script
+instrans.php.<br>
+
+
+<br>
+
+
+<span style="font-weight: bold;">GNU/Linux, UNIX, Cygwin,
+y Mac OS X:</span><br>
+
+
+Usuarios de derivativas de UNIX deben instalar el PHP 5 del
+repositorio<br>
+
+
+de su distribución. Por ejemplo, usuarios de Debian y su
+derivativas pueden <br>
+
+
+instalarlo así:<br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+su&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: monospace; font-style: italic;"></span><font size="-1"><span style="font-style: italic;">[entregue
+la contraseña de root]</span></font><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+apt-get install php5-cli</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+exit</span><br style="font-family: monospace; font-weight: bold;">
+
+
+<br>
+
+
+Usuarios de Ubuntu usan: <br>
+
+
+<span style="font-family: monospace;">&nbsp;
+&nbsp; sudo apt-get install php5-cli</span><br>
+
+
+<br>
+
+
+Después de instalar PHP 5, descargue y descompacte<br>
+
+
+<a href="http://www.ciber-runa.net/instrans.zip">www.ciber-runa.net/instrans.zip</a>&nbsp;
+Ahora puede utilizar el script
+instrans.php.<br>
+
+
+<br>
+
+
+<br>
+
+
+<a name="DESCRIPCIÓN"></a><span style="font-weight: bold;">DESCRIPCIÓN:</span><br>
+
+
+<br>
+
+
+El programa instrans.php inserta frases traducidas de archivo(s) PO en
+otro(s)<br>
+
+
+archivo(s) PO. Instrans es designado para ayudar traductores de
+software en <br>
+
+
+lenguas indígenas que tengan necesidades
+especiales.&nbsp; También puede <br>
+
+
+ser usado por traductores haciendo translaciones trilingües o
+por <br>
+
+
+traductores que quieran insertar translaciones
+automáticamente de otra lengua. <br>
+
+
+<br>
+
+
+Instrans permite que el traductor trata con tres lenguas a la misma vez
+en un <br>
+
+
+archivo PO. Eso es útil cuando se traduce lenguas en lugares
+donde inglés no <br>
+
+
+es el idioma predominante escrito.&nbsp; Por ejemplo, en
+América Latina y en África<br>
+
+
+Francesa muchos traductores de lenguas indígenas no pueden
+leer inglés y <br>
+
+
+necesitan ver las frases en español o
+francés.&nbsp; Instrans también puede ser <br>
+
+
+usado para insertar frases traducidas de otra lengua cuando la
+traductor no<br>
+
+
+quiere duplicar el trabajo ya hecho en otra traducción. Por
+ejemplo, muchas<br>
+
+
+lenguas indígenas utiliza muchas frases prestadas de otras
+lenguas, <br>
+
+
+especialmente en el contexto de la informática. Traductores
+puede utilizar<br>
+
+
+instrans para insertar las frases prestadas en sus archivos PO. <br>
+
+
+<br>
+
+
+Cada objeto PO tiene el formato siguiente:<br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+LÍNEA-DE-ESPACIO</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+# COMENTARIO-DE-TRADUCTOR</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+#. COMENTARIO-AUTOMÁTICO</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+#: REFERENCIA...</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+#, BANDERA...</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+msgid FRASE-NO-TRADUCIDA</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+msgstr FRASE-TRADUCIDA </span>
+<br>
+
+
+<br>
+
+
+Instrans extrae cada msgstr del TRASLACIONES-PO y lo inserta en el
+ORIGINAL-PO <br>
+
+
+(o opcionalmente en el NUEVO-PO) donde hay un msgid
+correspondiente.&nbsp; Si no <br>
+
+
+hay un msgid correspondiente, no inserta nada. Si hay más
+que un msgid <br>
+
+
+correspondiente, instrans busca lo cual tenga un comentario
+automático o <br>
+
+
+referencia equivalente. Por omisión instrans sólo
+inserta una frase PO cuando <br>
+
+
+el msgstr en el ORIGINAL-PO es vacío, pero puede borrar un
+msgstr existente y <br>
+
+
+insertar un frase PO nueva con la opción
+--overwrite.&nbsp; También hay opciones <br>
+
+
+para insertar las frases PO como comentarios o frases
+bilingües o en las <br>
+
+
+barras de estado. Además hay una opción --search
+para buscar frases <br>
+
+
+correspondientes usadas en otros programas.<br>
+
+
+<br>
+
+
+<br>
+
+
+<a style="font-weight: bold;" name="FORMATO"></a><span style="font-weight: bold;">FORMATO:</span><br>
+
+
+<br>
+
+
+<span style="font-family: monospace; font-weight: bold;">&nbsp;&nbsp;
+php
+instrans.php [OPCIONES] ORIGINAL-PO
+TRASLACIONES-PO [NUEVO-PO]</span><br style="font-weight: bold;">
+
+
+<br style="font-style: italic;">
+
+<span style="font-style: italic;">
+Opciones:</span> <br>
+
+
+<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-m
+|
+--msgstr</span><span style="font-family: monospace;">&nbsp;</span>&nbsp;&nbsp;&nbsp;
+Insertar las
+frases traducidas en los msgstr que son vacíos.<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Si quiere reemplazar los que no son vacíos, use la
+opción<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+--overwrite con esta opción. Si no especifica el tipo de <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+inserción, hará esto por omisión.<br>
+
+
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-b
+|
+--bilingual [=SEPARADOR]</span>&nbsp; &nbsp;<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Pegar frases traducidas al fin de msgstr existentes para <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+formar frases bilingües. Si hay un msgstr existente, se <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+divide las dos frases por un SEPARADOR que es " * " por <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+omisión. Frases que contienen caracteres de nueva
+línea (\n)<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+será separado por otra nueva línea en lugar del
+SEPARADOR.<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-c
+|
+--comment [=IDIOMA]</span><span style="font-family: monospace;">&nbsp;</span>&nbsp;
+&nbsp;<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Insertar frases traducidas como comentarios en la forma:<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-family: monospace;">#&nbsp;
+[IDIOMA] "FRASE-TRADUCIDA"</span><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Si no se específica el IDIOMA, por omisión es el
+nombre de <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TRASLACIONES-PO.&nbsp; Puede combinar --comment con todas las <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+otras opciones. Si usa --comment con --statusbar, insertará<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+comentarios sólo en objetos PO de la barra de estado en la <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+forma:<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="font-family: monospace;">#&nbsp;
+[IDIOMA] MENU: "FRASE-TRADUCIDA"</span><br>
+
+
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-s
+|
+--statusbar [=FRASE-MENU FRASE-BARRA-DE-ESTADO]</span><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Insertar frases traducidas del menú en la barra del estado. <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Si se encuentra un comentario automático que contiene la <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FRASE-MENU, busca otro objeto PO con la correspondiente <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FRASE-BARRA-DE-ESTADO y inserta la frase traducida allí. <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Por omisión FRASE-MENU es "MENU" y FRASE-BARRA-DE-ESTADO<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+es "STATUSBAR". Use esta opción con cuidado. Probablemente <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tiene que editar a mano el archivo PO después. <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-o
+|
+--overwrite</span>&nbsp; Reemplazar frases
+traducidas existentes. Sin
+esta opción, <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+sólo inserta la frase traducida cuando el msgstr es
+vacío. &nbsp;<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Si inserta comentarios, esta opción no borra los&nbsp;
+&nbsp;<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+comentarios de traductor excepto los que tengan la forma: <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#&nbsp; [...] "..."<br>
+
+
+<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-r
+|
+--recursive</span>&nbsp; &nbsp; Procesar
+todos los subdirectorios en
+ORIGINAL-PO y <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TRASLACIONES-PO. Esta opción sólo
+tendrá efecto si<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ORIGINAL-PO y TRASLACIONES-PO son directorios.<br>
+
+
+<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-e
+|
+--search</span><span style="font-family: monospace;">&nbsp;</span>&nbsp;&nbsp;&nbsp;
+Buscar frases
+traducidas en cualquier archivo o directorio en<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+TRASLANCIONES-PO. Use esta opción para encontrar frases <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+traducidas de otros programas.<br>
+
+
+<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-x
+|
+--strip [=CADENA]</span><span style="font-family: monospace;">&nbsp;</span>
+&nbsp;<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Quitar la CADENA de la frase traducida en inserciones<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+--bilingual y --statusbar. Si no se especifica la CADENA, los<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+signos "&amp;" serán quitado. CADENA puede ser un
+expresión <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Perl. Por ejemplo, -strip = "/&lt;.+&gt;/"&nbsp; quita todos
+los códigos<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+HTML de la frase insertada.<br>
+
+
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-p
+|
+--replace [=BUSQUEDA REEMPLAZO]</span><span style="font-family: monospace;">&nbsp;</span>&nbsp;
+&nbsp;<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Reemplazar BUSQUEDA por REEMPLAZO en la frase traducida en <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+inserciones --bilingual y --statusbar. Si no se especifica la<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+BUSQUEDA y el REEMPLAZO, variables de programación
+será <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+reemplazado por "@#@x@#@". Actualmente solo C, Objective C, <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+PHP, UNIX shell, QT, gcc internal, y YCP variables son <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+reconocido.&nbsp; BUSQUEDA y REEMPLAZO pueden ser expresiones <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Perl. Por ejemplo:&nbsp;<font style="font-family: monospace;"> -p = "/%([sd])/" "VAR_$1" </font><br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+reemplaza "%s" por "VAR_s" y "%d" por "VAR_d".<br>
+
+
+&nbsp;<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-v
+|
+--verbose</span>&nbsp;&nbsp;&nbsp;
+Mostrar avisos y
+más información.<br>
+
+
+<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-q
+|
+--quiet</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+No
+mostrar ninguna mensaje de pantalla.<br>
+
+
+<br style="font-weight: bold;">
+
+
+<span style="font-weight: bold; font-family: monospace;">-l
+| --log [=ARCHIVO]</span><span style="font-family: monospace;">&nbsp;</span>&nbsp;
+Desviar las mensajes de
+pantalla a un archivo. Si no <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+se especifica un archivo, por omisión es "instrans-log.txt".
+<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">-f
+|
+--interface = XX</span><span style="font-family: monospace;">&nbsp;</span>&nbsp;
+Especificar la lengua de la
+interfaz del usuario de<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+intrans. Por omisión instrans usará
+inglés si no se había <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+traducido en la lengua de su locale. Actualmente las únicas <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+opciones son "en", "es", y "pt".<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;<br>
+
+
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp;<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">ORIGINAL-PO</span><span style="font-family: monospace;">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+El archivo PO original o directorio. Si es un directorio va <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a procesar todo los archivos PO adentro del directorio.<br>
+
+
+<br style="font-weight: bold;">
+
+
+<span style="font-weight: bold; font-family: monospace;">TRASLACIONES-PO</span><span style="font-family: monospace;">&nbsp;</span>&nbsp;
+El archivo PO que contiene las
+frases traducidas que será <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+insertado en el ORIGINAL-PO (o opcionalmente en NUEVO-PO).<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;<br>
+
+
+<span style="font-weight: bold; font-family: monospace;">NUEVO-PO</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[opcional] Si no quiere reemplazar el ARCHIVO-PO, <br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+provea un nuevo nombre de archivo para escribir.<br>
+
+
+<br>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;<br>
+
+
+Se encierran en comillas los archivos que contienen espacios en sus
+nombres. <br>
+
+
+Ejemplos: <br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;php instrans.php "c:\mis
+documentos\fr-FR.po" es-ES.po "fr-FR 1.po"</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;php "c:\mis documentos\instrans.php"
+-b=" % " es-ES.po fr-FR.po</span>
+<br>
+
+
+&nbsp;<br>
+
+
+Para ayuda: <br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+php instrans.php -h | --help | -? | /? </span><br>
+
+
+<br>
+
+
+Para más información y ejemplos de uso: <br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+php instrans.php -i | --info</span> <br>
+
+
+<br>
+
+
+<br>
+
+
+<a style="font-weight: bold;" name="NOTAS"></a><span style="font-weight: bold;">NOTAS:</span><br>
+
+
+<br>
+
+
+<a style="font-weight: bold;" name="Usando_replace_ins_bilingual">Usando
+--replace con inserciones --bilingual:</a><br>
+
+
+<br>
+
+
+Use la opción --bilingual con cuidado y revise archivo(s) PO
+después. Las <br>
+
+
+frases traducidas puede contener variables de programación
+que puede causar<br>
+
+
+errores cuando están insertado. Por ejemplo, programas
+escrito en C usan el <br>
+
+
+símbolo %s para indicar un string (cadena de caracteres), %d
+para indicar un<br>
+
+
+intero, y %f para indicar un numero real que puede contener un punto
+decimal. <br>
+
+
+Normalmente frases PO con variables C son marcadas con la bandera: <br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
+#, c-format </span><br>
+
+
+Cuando se hace una frase bilingüe, va a duplicar el numero de
+variables en la <br>
+
+
+frase y esto puede causar errores en el programa. Para evitar este
+problema,<br>
+
+
+use la opción --replace.&nbsp; Si no se especifica
+BUSQUEDA y REEMPLAZO, instrans<br>
+
+
+busca los objetos PO con la bandera "#, LANG-format" y encierra todas
+las<br>
+
+
+variables en "@#@". Por ejemplo, "@#@s@#@" reemplaza "%s" y
+"@#@-10.4f@#@" <br>
+
+
+reemplaza "%-10.4f". <br>
+
+
+<br>
+
+
+Si su versión de PHP is 5.10 o después, la
+opción --verbose provee una aviso<br>
+
+
+cada vez que una variable ha sido reemplazado. Se aconseja que utilice
+las <br>
+
+
+opciones --verbose y --log con --bilingual para que tenga un registro
+de los <br>
+
+
+cambios.<br>
+
+
+<br>
+
+
+Después haga una búsqueda por "@#@" en su archivo
+PO y reemplace estas frases <br>
+
+
+con algo más apropiado en sus traslaciones.
+Desafortunadamente, hay muchas <br>
+
+
+lenguas de la computadora y instrans actualmente sólo
+reconoce variables de C, <br>
+
+
+Objective C, PHP, UNIX shell, QT, gcc interno, y YCP.&nbsp; De
+todos modos, no debe <br>
+
+
+confiarse mucho en las substituciones y debe revisar su archivo PO
+después. <br>
+
+
+<br>
+
+
+<br>
+
+
+<a style="font-weight: bold;" name="Usando_strip_ins_bilingual"></a><span style="font-weight: bold;">Usando
+--strip con inserciones --bilingual:</span><br>
+
+
+<br>
+
+
+Muchos programas usan el símbolo "&amp;" o
+"&amp;amp;" en los menús y ventanas de <br>
+
+
+diálogo para subrayar el siguiente carácter y
+hacerlo una tecla de acceso <br>
+
+
+directo. Si la opción --strip es usado sin especificar la
+CADENA, instrans<br>
+
+
+quitará los signos "&amp;" de las frases insertadas.
+Esto es útil porque un ítem <br>
+
+
+de menú y un objeto en un ventana de diálogo
+sólo pueden tener 1 tecla de <br>
+
+
+acceso directo. &nbsp;<br>
+
+
+<br>
+
+
+Los signos "&amp;" son sólo quitado si el msgstr
+existente es vacío. Porque "&amp;" es<br>
+
+
+muy usado para significar "y", sólo lo quita si es seguido
+por un carácter <br>
+
+
+alfabético o un numero. No lo quita si es seguido por un
+símbolo, un espacio, <br>
+
+
+o se aparece en el fin de una frase traducida. <br>
+
+
+<br>
+
+<br style="font-weight: bold;">
+
+
+<a style="font-weight: bold;" name="Opción_--statusbar"></a><span style="font-weight: bold;">Opción
+--statusbar:</span><br>
+
+
+<br>
+
+
+La opción --statusbar es muy experimental. Siempre haga
+copias de reserva de <br>
+
+
+sus archivos antes que usarla. Esta opción sólo
+sirve con programas que <br>
+
+
+tienen comentarios automáticos parecidos del menú
+y de la barra del estado. <br>
+
+
+Por ejemplo en el programa AbiWord, cada frase traducida de
+menú tiene un <br>
+
+
+comentario automático de "MENU_LABEL_..." y cada frase
+traducida de la barra <br>
+
+
+de estado tiene un comentario automático de
+"MENU_STATUSLINE_...".&nbsp; En este <br>
+
+
+caso, puede buscar la correspondiente barra del estado y insertar el
+msgstr <br>
+
+
+del menú. Sin embargo muchos programas no nombran sus
+menús y barras del <br>
+
+
+estado en una manera parecida y la opción --statusbar no
+sirve bien.&nbsp; Si <br>
+
+
+quiere borrar el msgstr existente y reemplazarlo con el msgstr del
+menú, debe <br>
+
+
+usar la opción --overwrite.&nbsp; Si quiere insertarlo
+en ambos msgstr y en el <br>
+
+
+comentarios, usa las opciones --comment con --msgstr.&nbsp; Puede
+usar la opción <br>
+
+
+--bilingual con --statusbar, pero va a pegar el msgstr del statusbar
+con <br>
+
+
+msgstr del menú.&nbsp;<br>
+
+
+<br>
+
+
+Como en las inserciones de --bilingual, la opción --strip sin especificar la <br>
+
+CADENA, quitará signos "&amp;" de las inserciones de --statusbar. Ya que barras de <br>
+
+estado no tienen teclas de acceso directo, se aconseja que use --strip con la <br>
+
+opción --statusbar. También puede usar la opción --replace sin especificar <br>
+
+BUSQUEDA y REEMPLAZO para quitar variables en inserciones de --statusbar. A <br>
+
+veces mensajes en la barra de estado contienen variables, pero es más seguro<br>
+
+reemplazar todas las variables primero, y luego añadir las variables <br>
+
+necesarias. <br>
+
+<br>
+
+<br>
+
+
+<a style="font-weight: bold;" name="Procesando_Directorios"></a><span style="font-weight: bold;">Procesando
+Directorios:</span><br>
+
+
+<br>
+
+
+Si ORIGINAL-PO y TRASLACIONES-PO son directorios, instrans
+procesará todos los <br>
+
+
+archivos en el directorio ORIGINAL-PO con la extensión
+".po", ".pot", o ".pox".<br>
+
+
+Instrans buscará archivos del mismo nombre en el directorio
+TRASLACIONES-PO <br>
+
+
+para insertar las frases traducidas.&nbsp; Los archivos en
+ORIGINAL-PO que no tengan<br>
+
+
+la extensión ".po", ".pot", o ".pox" serán
+solamente copiado al archivo <br>
+
+
+NUEVO-PO sin insertar nada. También los archivos PO en el
+directorio <br>
+
+
+ORIGINAL-PO que no tengan un correspondiente archivo con el mismo
+nombre en <br>
+
+
+TRASLACIONES-PO serán solamente copiado. <br>
+
+
+<br>
+
+
+Sin embargo, los archivos en TRASLACIONES-PO que no tengan un
+correspondiente <br>
+
+
+archivo en ORIGINAL-PO, no serán copiado.
+También, los subdirectorios en ambos<br>
+
+
+ORIGINAL-PO y TRASLACIONES-PO serán ignorado y no
+copiado.&nbsp; Si quiere procesar <br>
+
+
+los subdirectorios, use la opción --recursive. <br>
+
+
+&nbsp;<br>
+
+
+Por ejemplo, si tiene los directorios "es-ES" y "fr-FR" abajo y quiere
+insertar<br>
+
+
+las frases francesas en los archivos PO españoles, puede
+usar el mandato <br>
+
+
+siguiente:<br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
+php instrans.php es-ES fr-FR
+es-fr</span><br>
+
+
+&nbsp;<br>
+
+
+Va a producir un directorio NUEVO-PO "es-fr" así: <br>
+
+
+<br>
+
+
+<span style="font-family: monospace;">ORIGINAL-PO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TRASLACIONES-PO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUEVO-PO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">/es-ES/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/fr-FR/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/es-fr/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/intro.po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/intro.po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/intro.po &nbsp;</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/readme.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/readme.txt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/readme.txt&nbsp; [sólo copiado]</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/main.po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/main.po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/main.po</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/main.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/main.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/main.c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[sólo copiado]</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/files.pot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/files.pot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/files.pot</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/makelist.po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/different.po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/makelist.po [sólo copiado]</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/win/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/win/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/frontend.po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/frontend.po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/search.po&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/search.po</span>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;<br>
+
+
+<br>
+
+
+Solamente los archivos "intro.po", "main.po", y "files.pot" en el
+directorio <br>
+
+
+"es-ES" fueron procesado porque tienen una extensión PO y
+hay archivos <br>
+
+
+correspondientes en el directorio "fr-FR" con el mismo nombre. Los
+otros <br>
+
+
+archivos en "es-ES" fueron copiado al directorio "es-fr" sin
+inserciones. El <br>
+
+
+subdirectorio "win" fue ignorado y no fue copiado. Anota que el archivo
+<br>
+
+
+"different.po" en el directorio "fr-FR" no fue copiado tampoco porque no<br>
+
+
+había un correspondiente archivo en "es-ES". &nbsp;<br>
+
+
+<br>
+
+
+<br style="font-weight: bold;">
+
+
+<a style="font-weight: bold;" name="Opción_--search"></a><span style="font-weight: bold;">Opción
+--search</span> <br>
+
+
+<br>
+
+
+Si quiere insertar frases traducidos de qualquier archivo en un directorio, <br>
+
+use la opción --search.&nbsp; Por ejemplo, el
+mandato:<br>
+
+
+<span style="font-family: monospace;">
+&nbsp;&nbsp;&nbsp; php instrans.php --search es-ES/intro.po
+fr-FR intro-mess.po</span><br>
+
+
+<br>
+
+
+Instrans va a buscar frases traducidas en todos los archivos PO en el <br>
+
+
+directorio "fr-FR" y insertarlas en el archivo nuevo "intro-mess.po".
+Si quiere<br>
+
+
+procesar todos los archivos en es-ES así, buscando en todos
+los archivos de <br>
+
+
+fr-FR, usa el mandato:<br>
+
+
+<span style="font-family: monospace;">
+&nbsp;&nbsp;&nbsp; </span><span style="font-family: monospace;">php
+instrans.php --search es-ES fr-FR es-fr
+</span><span style="font-weight: bold; font-family: monospace;">&nbsp;</span><br>
+
+
+&nbsp; &nbsp;<br>
+
+
+Si quiere buscar en el subdirectorio "win" también, usa la
+opción --recursive. <br>
+
+
+<br>
+
+
+<br>
+
+
+<a style="font-weight: bold;" name="Errores_de_Sintaxis"></a><span style="font-weight: bold;">Errores de
+Sintaxis:</span><br>
+
+
+<br>
+
+
+Si instrans encuentra un error de sintaxis en un objeto PO, va a
+añadirlo al<br>
+
+
+conteo de errores de sintaxis y mostrarlo al fin de procesamiento. En
+modo <br>
+
+
+--verbose, instrans muestra mensajes de aviso y el numero de
+línea en <br>
+
+
+el archivo donde puede encontrar los errores de sintaxis. En
+TRASLACIÓNES-PO<br>
+
+
+los errores de sintaxis son contado, pero no serán escrito
+al NUEVO-PO. Si un <br>
+
+
+error de sintaxis es encontrado en ORIGINAL-PO y es un problema
+sencillo como<br>
+
+
+una línea no terminada en comillas, instrans lo
+arreglará al escribir al <br>
+
+
+NUEVO-PO.&nbsp; Si instrans no puede determinar donde ponga un
+elemento PO en <br>
+
+
+NUEVO-PO, escribirá "SYNTAX ERROR: " y la línea
+con el error de sintaxis en el <br>
+
+
+comentario de traductor del objeto PO más cerca. Si su
+archivos PO tienen <br>
+
+
+errores, se recomienda que use la opción --verbose para que Ud. pueda encontrar <br>
+
+y corregir los errores de sintaxis después.<br>
+
+
+<br>
+
+
+Por ejemplo, si instrans encuentra los siguientes objetos PO in
+ORIGINAL-PO: <br>
+
+
+<br>
+
+
+<span style="font-family: monospace;">&nbsp;#:
+po/ap_Id.h.h:283&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Problemas:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;msGiD
+"Edit"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(msgid no debe tener letras
+mayúsculas&nbsp;&nbsp;&nbsp;&nbsp; )</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;msgstr"Editar"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(falta espacio entre msgstr y
+"editar"&nbsp;&nbsp;&nbsp;&nbsp; )</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;
+&nbsp;</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;#:
+po/ap_Id.h.h:281</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;msgi
+"Help"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Debe ser
+"msgid"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;msgstr
+"Ayuda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Línea debe terminar en
+comillas.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)</span>
+<br>
+
+
+&nbsp;&nbsp; &nbsp;<br>
+
+
+El NUEVO-PO será escrito:<br>
+
+
+<br>
+
+
+<span style="font-family: monospace;">&nbsp;#:
+po/ap_Id.h.h:283&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Cómo problemas son
+tratado:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;msgid
+"Edit"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Arreglado sin mensaje de
+aviso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;msgstr
+"Editar"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Arreglado sin mensaje de
+aviso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;
+&nbsp;</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;#
+SYNTAX ERROR: msgi "Help"&nbsp;&nbsp;&nbsp;
+(Línea es traslado al comentario con aviso )</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;#:
+po/ap_Id.h.h:281&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;msgstr
+"Ayuda"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(Arreglado con un mensaje de
+aviso&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+)</span>
+<br>
+
+
+&nbsp;&nbsp; &nbsp;<br>
+
+
+Instrans transformará 'msGiD "Edit"' a 'msgid "Edit"' y
+'msgstr"Editar"'<br>
+
+
+a 'msgstr "Editar"' sin emitir un aviso o contar un error. Sin embargo
+en el<br>
+
+
+segundo objeto PO, instrans contará errores de sintaxis y
+emitirá avisos en<br>
+
+
+el modo --verbose sobre las comillas faltadas en 'msgstr "Ayuda' y la
+palabra<br>
+
+
+desconocida "msgi".&nbsp; En el caso de 'msgstr "Ayuda', instrans
+añadirá las <br>
+
+
+comillas finales automáticamente, pero no sabrá
+que hacer con 'msgi "Help"'. <br>
+
+
+Va a proveer un aviso y poner la línea en el comentario de
+traductor después<br>
+
+
+de las palabras 'SYNTAX ERROR: '.&nbsp;&nbsp; &nbsp;<br>
+
+
+&nbsp;<br>
+
+
+<br style="font-weight: bold;">
+
+
+<a style="font-weight: bold;" name="Valor_de_devuelto"></a><span style="font-weight: bold;">Valor de devuelto:</span><br>
+
+
+&nbsp;<br>
+
+
+Instrans devuelve un valor de 0 si procesa sin problemas. Devuelve 1-20
+si <br>
+
+
+encuentra errores abriendo y escribiendo archivos o procesando datos.
+Devuelve<br>
+
+
+20-40 si encuentra errores en los argumentos pasado por el usuario.
+Devuelve <br>
+
+
+41-42 en el caso de la opción --help o --formato.<br>
+
+
+<br>
+
+
+<a name="Por_qué_demora_tanto"></a><br>
+
+
+<span style="font-weight: bold;">¿Por
+qué demora tanto?</span><br>
+
+
+<br>
+
+
+Instrans puede demorar mucho al procesar archivos grandes. En mi
+maquina <br>
+
+
+gasta 6 segundos procesando el archivo PO de AbiWord que contiene 1500
+frases<br>
+
+
+traducidas, pero gasta mucho más tiempo en maquinas
+más viejas. Originalmente<br>
+
+
+instrans fue escrito para ser una aplicación de web en PHP.
+Dentro de poco fue<br>
+
+
+claro que fuese más eficaz de descargarlo de internet y
+utilizarlo en casa.<br>
+
+
+Aunque PHP es bueno para servir paginas web, procesa muy lentamente
+grandes <br>
+
+
+cantidades de datos en archivos. Si esto te molesta mucho, sientese
+libre para<br>
+
+
+re-escribir el código en una lengua más
+rápida. &nbsp;<br>
+
+
+<br>
+
+
+<a name="Por_qué_usa_tanta_memoria"></a><br>
+
+
+<span style="font-weight: bold;">¿Por
+qué usa tanta memoria?</span><br>
+
+
+<br>
+
+
+Si procesa archivos PO grandes con millares de objetos o usa la
+opción --search<br>
+
+
+con una grande cantidad de archivos, instrans utiliza mucha memoria
+para <br>
+
+
+cargar todos los objetos encontrados.&nbsp; Por defecto puede
+utilizar un máximo de<br>
+
+
+40MB de memoria, pero puede aumentarla. Cambie el mandato <br>
+
+
+ini_set('memory_limit', '40M');&nbsp; en el archivo
+"instrans-header.php".<br>
+
+
+<br>
+
+
+<a style="font-weight: bold;" name="EJEMPLOS_DE_USO"></a><br style="font-weight: bold;">
+
+
+<span style="font-weight: bold;">EJEMPLOS DE USO </span><br>
+
+
+<br>
+
+
+<a name="Ejemplo_Basic"></a><br>
+
+
+<span style="font-weight: bold;">Ejemplo Basico:</span>
+<br>
+
+
+<br>
+
+
+Una traductora de quechua boliviano ha traducido algunas frases en el
+archivo <br>
+
+
+qu-BO.po, pero quiere convertir las frases no traducidas al castellano.
+&nbsp;<br>
+
+
+Ella descarga el archivo es-ES.po y entrega el mandato: <br>
+
+
+<br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
+php instrans.php qu-BO.po
+es-ES.po</span>
+<br>
+
+
+<br>
+
+
+Si qu-BO.po se aparece así:<br>
+
+
+------------------------------------------<br>
+
+
+<span style="font-family: monospace;">
+#. MENU_LABEL_FILE_OPEN</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+#: po/tmp/ap_String_Id.h.h:285</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+msgid "&amp;Open"</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+msgstr "&amp;Kichay"</span><br style="font-family: monospace;">
+
+
+<br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+#. MENU_STATUSLINE_FILE_OPEN</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+#: po/tmp/ap_String_Id.h.h:1692</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+msgid "Open an existing document"</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+msgstr "Kasqaña documentota kichay"</span><br style="font-family: monospace;">
+
+
+<br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+#&nbsp; ¿Puede traducir "Print" como
+"ñit'isqa"? ¿Qué es "Layout"?</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+#. MENU_LABEL_VIEW_PRINT</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+#: po/tmp/ap_String_Id.h.h:309</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+msgid "P&amp;rint Layout"</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+msgstr ""</span><br style="font-family: monospace;">
+
+
+<br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+#. MSG_ConfirmSave</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+#: po/tmp/ap_String_Id.h.h:1995</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+#, c-format</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+msgid ""</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+"Save changes to document %s \nbefore closing?"</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+msgstr ""</span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">
+"¿Uqjinayachisqaykita «%s» archivopi
+\njallch'ayta munankichu?"</span>
+<br>
+
+
+------------------------------------------<br>
+
+
+<br>
+
+
+y es-ES.po se aparece así:<br>
+
+
+------------------------------------------<br>
+
+
+<font style="font-family: monospace;">
+#. MENU_LABEL_FILE_OPEN<br>
+
+
+#: po/tmp/ap_String_Id.h.h:285<br>
+
+
+msgid "&amp;Open"<br>
+
+
+msgstr "&amp;Abrir"<br>
+
+
+<br>
+
+
+#. MENU_STATUSLINE_FILE_OPEN<br>
+
+
+#: po/tmp/ap_String_Id.h.h:1692<br>
+
+
+msgid "Open an existing document"<br>
+
+
+msgstr "Abrir un documento existente"<br>
+
+
+<br>
+
+
+#. MENU_LABEL_VIEW_PRINT<br>
+
+
+#: po/tmp/ap_String_Id.h.h:309<br>
+
+
+msgid "P&amp;rint Layout"<br>
+
+
+msgstr "Di&amp;seño de impresión"<br>
+
+
+<br>
+
+
+#. MSG_ConfirmSave<br>
+
+
+#: po/tmp/ap_String_Id.h.h:1995<br>
+
+
+#, c-format<br>
+
+
+msgid ""<br>
+
+
+"Save changes to document %s \nbefore closing?"<br>
+
+
+msgstr ""<br>
+</font><font style="font-family: monospace;">
+
+"¿Desea guardar los cambios al documento %s \nantes de
+cerrar?"</font>&nbsp;<br>
+
+
+------------------------------------------<br>
+
+
+<br>
+
+
+Entonces instrans insertará la frase
+"Di&amp;seño de impresión" pero no
+tocará <br>
+
+
+los otros objetos PO. El archivo qu-BO.po será sobre-escrito
+así:<br>
+
+
+------------------------------------------<br>
+
+
+<font style="font-family: monospace;">
+#. MENU_LABEL_FILE_OPEN<br>
+
+
+#: po/tmp/ap_String_Id.h.h:285<br>
+
+
+msgid "&amp;Open"<br>
+
+
+msgstr "&amp;Kichay"<br>
+
+
+<br>
+
+
+#. MENU_STATUSLINE_FILE_OPEN<br>
+
+
+#: po/tmp/ap_String_Id.h.h:1692<br>
+
+
+msgid "Open an existing document"<br>
+
+
+msgstr "Kasqaña documentota kichay"<br>
+
+
+<br>
+
+
+#&nbsp; ¿Puede traducir "Print" como
+"ñit'isqa"? ¿Qué es "Layout"?<br>
+
+
+#. MENU_LABEL_VIEW_PRINT<br>
+
+
+#: po/tmp/ap_String_Id.h.h:309<br>
+
+
+msgid "P&amp;rint Layout"<br>
+
+
+msgstr "Di&amp;seño de impresión"<br>
+
+
+<br>
+
+
+#. MSG_ConfirmSave<br>
+
+
+#: po/tmp/ap_String_Id.h.h:1995<br>
+
+
+#, c-format<br>
+
+
+msgid ""<br>
+
+
+"Save changes to document %s \nbefore closing?"<br>
+
+
+msgstr ""<br>
+
+
+</font><span style="font-family: monospace;">
+"¿Uqjinayachisqaykita «%s» archivopi
+\njallch'ayta munankichu?"</span>
+<br>
+
+
+------------------------------------------<br>
+
+
+<br>
+
+
+<a name="Ejemplo_con_--comment"></a><br>
+
+
+<span style="font-weight: bold;">Ejemplo con --comment:<br>
+
+
+</span><br>
+
+
+La primera traductora pasa el archivo PO a otro traductor de quechua
+boliviano <br>
+
+
+que no puede leer inglés, él quiere insertar
+traslaciones castellanas como <br>
+
+
+comentarios en un archivo nuevo llamado qu-BO-tras.po:<br>
+
+
+<br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+php instrans.php --comment="es-ES"
+qu-BO.po es-ES.po qu-BO-tras.po</span>
+<br>
+
+
+<br>
+
+
+El nuevo archivo qu-BO-tras.po contendrá:<br>
+
+
+------------------------------------------<br>
+
+
+<font style="font-family: monospace;">
+#&nbsp; [es-ES] "&amp;Abrir"<br>
+
+
+#. MENU_LABEL_FILE_OPEN<br>
+
+
+#: po/tmp/ap_String_Id.h.h:285<br>
+
+
+msgid "&amp;Open"<br>
+
+
+msgstr "&amp;Kichay"<br>
+
+
+<br>
+
+
+#&nbsp; [es-ES] "Abrir un documento existente"<br>
+
+
+#. MENU_STATUSLINE_FILE_OPEN<br>
+
+
+#: po/tmp/ap_String_Id.h.h:1692<br>
+
+
+msgid "Open an existing document"<br>
+
+
+msgstr "Kasqaña documentota kichay"<br>
+
+
+<br>
+
+
+#&nbsp; [es-ES] "Di&amp;seño de impresión"<br>
+
+
+#&nbsp; ¿Puede traducir "Print" como
+"ñit'isqa"? ¿Qué es "Layout"?.<br>
+
+
+#. MENU_LABEL_VIEW_PRINT<br>
+
+
+#: po/tmp/ap_String_Id.h.h:309<br>
+
+
+msgid "P&amp;rint Layout"<br>
+
+
+msgstr ""<br>
+
+
+<br>
+
+
+#&nbsp; [es-ES] ""<br>
+
+
+#&nbsp; [es-ES] "¿Desea guardar los cambios al documento
+%s \nantes de cerrar?"<br>
+
+
+#. MSG_ConfirmSave<br>
+
+
+#: po/tmp/ap_String_Id.h.h:1995<br>
+
+
+#, c-format<br>
+
+
+msgid ""<br>
+
+
+"Save changes to document %s \nbefore closing?"<br>
+
+
+msgstr ""<br>
+
+
+"¿Uqjinayachisqaykita «%s» archivopi
+\njallch'ayta munankichu?"</font>
+<br>
+
+
+------------------------------------------<br>
+
+
+<br>
+
+
+<br>
+
+
+<a style="font-weight: bold;" name="Ejemplo_con_--bilingual"></a><span style="font-weight: bold;">Ejemplo con
+--bilingual:<br>
+
+
+</span><br>
+
+
+Muchos quechua-hablantes no son acostumbrado a leerlo y necesita ver la
+<br>
+
+
+traducción en español al lado del quechua. Los
+traductores deciden<br>
+
+
+hacer una versión bilingüe.&nbsp; Las frases
+quechuas serán separados de las <br>
+
+
+frases españoles por " ][ ".&nbsp; Las opciones --strip
+y --replace son usado<br>
+
+
+para quitan cualquier signo "&amp;" o variable que pueda causar
+errores. Las<br>
+
+
+opciones --verbose y --log son usado para que los traductores tengan un
+<br>
+
+
+registro de cada lugar donde las variables había sido
+reemplazado por<br>
+
+
+"@#@x@#@".&nbsp; Después ellos revise el archivo PO y
+borrar los "@#@x@#@".<br>
+
+
+<br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+php instrans.php -v --log --strip
+--replace --bilingual=" ][ " </span><br style="font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+qu-BO.po es-ES.po qu-es-BO.po</span>
+<br>
+
+
+&nbsp; &nbsp;<br>
+
+
+El archivo qu-es-BO.po contendrá:<br>
+
+
+------------------------------------------<br>
+
+
+<font style="font-family: monospace;">
+#. MENU_LABEL_FILE_OPEN<br>
+
+
+#: po/tmp/ap_String_Id.h.h:285<br>
+
+
+msgid "&amp;Open"<br>
+
+
+msgstr "&amp;Kichay ][ Abrir"<br>
+
+
+<br>
+
+
+#. MENU_STATUSLINE_FILE_OPEN<br>
+
+
+#: po/tmp/ap_String_Id.h.h:1692<br>
+
+
+msgid "Open an existing document"<br>
+
+
+msgstr "Kasqaña documentota kichay ][ Abrir un documento
+existente"<br>
+
+
+<br>
+
+
+#&nbsp; ¿Puede traducir "Print" como
+"ñit'isqa"? ¿Qué es "Layout"?<br>
+
+
+#. MENU_LABEL_VIEW_PRINT<br>
+
+
+#: po/tmp/ap_String_Id.h.h:309<br>
+
+
+msgid "P&amp;rint Layout"<br>
+
+
+msgstr "Di&amp;seño de impresión"<br>
+
+
+<br>
+
+
+#. MSG_ConfirmSave<br>
+
+
+#: po/tmp/ap_String_Id.h.h:1995<br>
+
+
+#, c-format<br>
+
+
+msgid ""<br>
+
+
+"Save changes to document %s \nbefore closing?"<br>
+
+
+msgstr ""<br>
+
+
+"¿Uqjinayachisqaykita %s archivopi \njallch'ayta munankichu?"<br>
+
+
+"\n¿Desea guardar los cambios al documento @#@s@#@ \nantes
+de cerrar?"</font>
+<br>
+
+
+------------------------------------------<br>
+
+
+<br>
+
+
+El separador " ][ " no es insertado antes de la frase
+"Di&amp;seño de impresión" <br>
+
+
+porque el msgstr fue vació. Las dos frases en
+Msg_ConfirmSave son separados <br>
+
+
+por un carácter de nueva línea (\n) en lugar de "
+][ " porque el msgstr ya <br>
+
+
+contiene una nueva línea. En este caso la ventana de
+diálogo se expande por <br>
+
+
+el tamaño del mensaje, pero en otros casos el
+tamaño de ventana es fijado y <br>
+
+
+una traslación de líneas múltiples no
+es posible. Hay que chequear cada <br>
+
+
+ventana de diálogo para verificar que quepa la frase
+bilingüe.<br>
+
+
+&nbsp;<br>
+
+
+Porque el msgstr de MENU_LABEL_VIEW_PRINT no tenía un signo
+"&amp;" (símbolo de <br>
+
+
+acceso directo), el "&amp;" no es quitado el la frase insertado
+"Di&amp;seño de <br>
+
+
+impresión", pero en el caso de MENU_LABEL_FILE_OPEN, el
+msgstr ya tenía un "&amp;".<br>
+
+
+Por eso, "&amp;" es quitado de la frase "&amp;Abrir" antes que
+insertarla. <br>
+
+
+<br>
+
+
+<br>
+
+
+<a style="font-weight: bold;" name="Ejemplo_con_--statusbar"></a><span style="font-weight: bold;">Ejemplo con
+--statusbar:<br>
+
+
+</span><br>
+
+
+Los traductores quechuas no les gustan los menús
+bilingües porque son muy <br>
+
+
+grandes y incómodos. Por eso ellos deciden poner las
+traslaciones españoles <br>
+
+
+de los menús en la barra del estado. Si un usuario no sabe
+lo que significa <br>
+
+
+un menú puede mirar abajo en la barra del estado. Ellos usan
+la opción <br>
+
+
+--overwrite para borrar y reemplazar los msgstr existentes.&nbsp; Las opciones <br>--strip y --replace son usado para
+quitar cualquier signo "&amp;" y <br>variable que pueda causar problemas.<br>
+
+
+<br style="font-weight: bold; font-family: monospace;">
+
+
+<span style="font-family: monospace;">&nbsp;php
+instrans --strip --replace --overwrite --verbose
+<br>
+
+
+&nbsp; </span><span style="font-family: monospace;">&nbsp; --statusbar="MENU_LABEL_"
+"MENU_STATUSLINE_" <br>
+
+
+&nbsp; &nbsp; qu-BO.po
+es-ES.po qu-BO-prueba.po</span>
+<br>
+
+
+<br>
+
+
+Entonces el archivo nuevo qu-BO-pruebe.po contendrá: <br>
+
+
+------------------------------------ <br>
+
+
+<font style="font-family: monospace;">
+#. MENU_LABEL_FILE_OPEN<br>
+
+
+#: po/tmp/ap_String_Id.h.h:285<br>
+
+
+msgid "&amp;Open"<br>
+
+
+msgstr "&amp;Kichay"<br>
+
+
+<br>
+
+
+#&nbsp; [es-ES] MENU: "&amp;Abrir"<br>
+
+
+#. MENU_STATUSLINE_FILE_OPEN<br>
+
+
+#: po/tmp/ap_String_Id.h.h:1692<br>
+
+
+msgid "Open an existing document"<br>
+
+
+msgstr "Abrir"<br>
+
+
+<br>
+
+
+#&nbsp; ¿Puede traducir "Print" como
+"ñit'isqa"? ¿Qué es "Layout"?<br>
+
+
+#. MENU_LABEL_VIEW_PRINT<br>
+
+
+#: po/tmp/ap_String_Id.h.h:309<br>
+
+
+msgid "Print Layout"<br>
+
+
+msgstr ""<br>
+
+
+<br>
+
+
+#. MSG_ConfirmSave<br>
+
+
+#: po/tmp/ap_String_Id.h.h:1995<br>
+
+
+#, c-format<br>
+
+
+msgid ""<br>
+
+
+"Save changes to document %s \nbefore closing?"<br>
+
+
+msgstr ""<br>
+
+
+"¿Uqjinayachisqaykita %s archivopi \njallch'ayta munankichu?"</font>
+<br>
+
+
+--------------------------------------<br>
+
+
+&nbsp;&nbsp; &nbsp;<br>
+
+
+Ahora cuando el ratón pasa sobre Abrir en el menú
+Archivo, el usuario de <br>
+
+
+este software va a ver "Kichay" en el menú y "Abrir" en la
+barra de estado.<br>
+
+
+<br>
+
+
+<br style="font-weight: bold;">
+
+
+<a style="font-weight: bold;" name="Ejemplo_con_--search"></a><span style="font-weight: bold;">Ejemplo con
+--search: <br>
+
+
+</span><br>
+
+
+Los traductores bolivianos deciden traducir un programa nuevo al
+quechua,<br>
+
+
+pero el programa todavía no había traducido en
+español.&nbsp; No hay un archivo PO <br>
+
+
+donde pueden sacar las frases españoles.&nbsp; Sin
+embargo, ellos observan que otros<br>
+
+
+programas habían sido traducido en español y esos
+otros programas tienen muchas<br>
+
+
+de las mismas frases como su programa nuevo.&nbsp; Quieren insertar
+esas frases <br>
+
+
+sacado de muchos programas en los comentarios en el nuevo archivo
+qu-es.po. <br>
+
+
+Ellos recolectan todos los archivos PO de esos programas en el
+directorio <br>
+
+
+"es-muchos" y en sus subdirectorios y entregan el mandato:<br>
+
+
+<br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;
+php instrans.php -c --search --recursive qu-BO.po
+es-muchos qu-es.po</span><br>
+
+
+&nbsp;<br>
+
+
+&nbsp;<br style="font-weight: bold;">
+
+
+<a style="font-weight: bold;" name="LICENCIA_Y_AUTOR"></a><span style="font-weight: bold;">LICENCIA Y AUTOR</span><br>
+
+
+<br>
+
+
+---***---<br>
+
+
+<span style="font-family: monospace; font-weight: bold;">Licencia:&nbsp;
+</span>Actual versión de GNU Licencia de
+Protección General Reducida (LGPL)<br>
+
+
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>que se puede leer en: <a href="http://www.gnu.org">http://www.gnu.org</a>
+<br>
+
+
+<span style="font-family: monospace; font-weight: bold;">Autor:&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Amos Batto
+(amosbatto@yahoo.com)<br>
+
+
+<span style="font-family: monospace; font-weight: bold;">Creado:&nbsp;&nbsp;&nbsp;
+</span>22 Jun 2006, Última
+actualización: 20 sep 2007<br>
+
+
+<br>
+
+
+Este script fue escrito como parte del proyecto <a href="http://www.ciber-runa.net">www.ciber-runa.net</a><br>
+
+
+para ayudar gente crear traducciones de software en lenguas
+indígenas.<br>
+
+
+<br>
+
+
+Por favor mande reportajes de fallos&nbsp;o sus sugerencias
+a amosbatto@yahoo.com <br>
+
+
+para que yo pueda mejorar instrans.php. Gracias.<br>
+
+
+---***---<br>
+
+
+&nbsp;<br>
+
+
+&nbsp;<br>
+
+
+<a style="font-weight: bold;" name="DOCUMENTACIÓN_EN_OTRAS_LENGUAS"></a><span style="font-weight: bold;">DOCUMENTACIÓN
+EN OTRAS LENGUAS</span><br>
+
+
+<br>
+
+
+Versiones de este documento: <br>
+
+
+<a href="readme-en.txt">readme-en.txt</a> &nbsp;<a href="readme-en.html">readme-en.html</a> (English)<br>
+
+
+<a href="readme-es.txt">readme-es.txt</a> &nbsp;<a href="file:///E:/ciber-runa/instrans-0.2/readme-es.html">readme-es.html</a>
+(español) <br>
+
+
+<a href="readme-pt.txt">readme-pt.txt</a> &nbsp;<a href="readme-pt.html">readme-pt.html</a>
+(português) <br>
+
+
+<br>
+
+
+Porque instrans es designado para ayudar traductores que no puedan
+leer inglés,<br>
+
+
+estamos buscando para gente que pueda traducir este programa en otras
+lenguas. <br>
+
+
+Especialmente necesitamos una traducción francesa. <br>
+
+
+<br>
+
+
+----------------------------------------------<br>
+
+
+<span style="font-weight: bold;">Nota:</span> Si Ud.
+no puede ver todo este documento en DOS, necesita aumentar
+el <br>
+
+
+"Tamaño del búfer de pantalla" en la
+pestaña "Diseño". Puede encontrarlo bajo <br>
+
+
+"Propiedades" en el menú [c:\] a la izquierda arriba de la
+ventana de DOS.
+</body></html>

@@ -1,0 +1,51 @@
+<?php
+
+//If this is set as a heredoc, then errors about unexpeced ] later in code. 
+//Can't figure out why.
+
+$sHelp = __(
+"Instrans inserta frases traducidas de archivo(s) PO en otro(s) archivo(s) PO.\n" .
+"FORMATO:\n" .
+"   php instrans.php [OPCIONES] ORIGINAL-PO TRASLACIONES-PO [NUEVO-PO]\n" .
+"OPCIONES: \n" .
+"-m | --msgstr     Insertar las frases traducidas en los msgstr que son vacíos.\n" .
+"-b | --bilingual [=SEPARADOR]   Pegar frases traducidas al fin de msgstr \n" .
+"                  existentes para formar frases bilinguales. Dividir las dos \n" .
+"                  frases por un SEPARADOR que es \" * \" por omisión. \n" .
+"-c | --comment [=IDIOMA]   Insertar frases traducidas como comentarios en la \n" .
+"                  forma: # [IDIOMA] \"FRASE TRADUCIDA\" Si no specifica el \n" .
+"                  IDIOMA, por omisión es el nombre del archivo TRASLACIONES-PO.\n" .
+"-s | --statusbar [=FRASE-MENU FRASE-BARRA-DE-ESTADO] \n" .
+"                  Insertar frases traducidas del menú en la barra del estado. \n" .
+"                  Si se encuentra un comentario automático que contiene la \n" .
+"                  FRASE-MENU, busca otro PO con la correspondiente \n" .
+"                  FRASE-BARRA-DE-ESTADO y inserta la frase PO allí. Por omisión\n" .
+"                  FRASE-MENU es \"MENU\" y FRASE-BARRA-DE-ESTADO es \"STATUSBAR\".\n" .
+"-o | --overwrite  Reemplazar frases traducidas existentes. Sin esta opción,\n" .
+"                  sólo inserta la frase traducida cuando el msgstr es vacío.\n" .
+"-n | --no-strip   No eliminar los signos & y las variables C/C++ de las frases \n" .
+"                  traducidas en las inserciones --bilingual y --statusbar. \n" .
+"-r | --recursive  Si ORIGINAL-PO es un directorio, procesa todos los \n" . 
+"                  subdirectorios también. \n" .  
+"-v | --verbose    Mostrar avisos y más información. \n" .
+"-q | --quiet      No mostrar ningunas avisos or mensajes de errores. \n" .
+"-l | --log [=ARCHIVO]   Desviar las mensajes de pantalla a un archivo que es \n" .
+"                  \"instrans-log.txt\" por omisión. \n" .
+"-f | --interface = XX   Especificar la lengua de la interfaz del usuario.\n" .
+" \n" .
+"ORIGINAL-PO       El archivo PO original. Si es un directorio va a procesar \n" .
+"                  todos los archivos PO adentro del directorio. \n" .
+"TRASLACIONES-PO   El archivo o directorio PO que contiene las frases \n" .
+"                  traducidas que será insertado en el ORIGINAL-PO (o en \n" .
+"                  NUEVO-PO). \n" .
+"NUEVO-PO          [opcional] Si no quiere reemplazar el ORIGINAL-PO, provea \n" .
+"                  un nombre de un neuvo archivo o directorio para escribir. \n" .
+"Para más información y ejemplos:    php instrans.php --info \n");
+
+//For some reason PHP in Windows XP chokes on large heredocs. If 
+//a heredoc is broken into multiple pieces, PHP won't throw errors,  
+//Maybe I need to increase the memory, or maybe it is problem with PHP itself.
+//In any case, going to save the help text in the file readme-LANG.txt, 
+//so can open it if passed the argument --info 
+
+?>
