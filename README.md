@@ -187,7 +187,7 @@ in other programs.
   
 -q | --quiet      Don't show any screen messages.  
   
--l | --log [=ARCHIVO]   
+-l | --log [=FILE]   
                   Reroute all screen messages to a file. If the filename  
                   isn't specified, by default it will be "instrans-log.txt".  
                     
@@ -413,8 +413,8 @@ errors in the arguments passed by the user. If the user uses the options
 `--help` or `--info`, instrans returns 41 or 42 respectively.  
   
   
-#### <a id="Why_so_slow">Why so slow?</a> ####  
-   
+#### <a id="Why_so_slow">Why so slow?</a> ####
+
 Instrans can be very slow when processing large files. On my machine it takes  
 6 seconds to process the AbiWord PO file which has 1500 translated phrases, but  
 on older machines it can take much longer. `instrans.php` was originally written  
@@ -425,7 +425,7 @@ slow at processing large amounts of data in files.   
   
   
 #### <a id="Why_using_so_much_memory">Why using so much memory?</a> ####  
-  
+
 If you processing a large PO file with thousands of objects or are using the  
 `--search` option with a large number of files, you can expect instrans to use  
 a lot of memory to hold all the PO objects that it finds.  Instrans is set to  
@@ -445,7 +445,7 @@ ini_set('memory_limit', '256M');
 #### <a id="Basic_Example">Basic Example</a> ####  
   
 A translator of Bolivian Quechua has translated some phrases in the file  
-qu-BO.po, but wants to convert the rest of the untranslated phrases into  
+`qu-BO.po`, but wants to convert the rest of the untranslated phrases into  
 Spanish. She downloads the file es-ES.po and issues the following command:  
   
 ```
@@ -533,7 +533,7 @@ msgstr ""
 "¿Uqjinayachisqaykita %s archivopi \njallch'ayta munankichu?"  
 ```
   
-#### <a id="comment_Example">--comment Example</a> ####  
+#### <a id="comment_Example">`--comment` Example</a> ####  
   
 The first translator passes his PO file onto another translator of Bolivian  
 Quechua who can't read English.  He wants to insert Spanish translations as  
