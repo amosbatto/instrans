@@ -1,15 +1,15 @@
-**`instrans.php` -- *software to insert translations in PO files***
+**`instrans.php` - *software to insert translations in PO files***
 
 **Contents:**  
     [Instalation](#INSTALATION)  
     [Description](#DESCRIPTION)  
     [Format](#FORMAT)  
     [Notes](#NOTES)  
-        [Using `--replace` with `--bilingual` insertions](#Using_replace_with_bilingual)  
-        [Using `--strip` with `--bilingual` insertions](#Using_strip_with_bilingual)  
+        [Using `--replace` with `--bilingual` insertions](#Using_replace_with_bilingual_insertions)  
+        [Using `--strip` with `--bilingual` insertions](#Using_strip_with_bilingual_insertions)  
         [`--statusbar` Option](#statusbar_Example)  
         [Processing Directories](#Processing_Directories)  
-        [`--search` Option:](#search_Option)  
+        [`--search` Option](#search_Option)  
         [Syntax Errors](#Syntax_Errors)  
         [Return Value](#Return_Value)  
         [Why so slow?](#Why_so_slow)  
@@ -339,25 +339,27 @@ directory `fr-FR` was also not copied because it doesn't have a matching file
 in `es-ES`.  
   
   
-#### <a id="search_Option">--search Option</a> ####  
+#### <a id="search_Option">`--search` Option</a> ####  
   
 If you want to insert translated phrases from any of the files in a directory,  
 use the option `--search`.  For example, the command:  
 ```
 php instrans.php --search es-ES/intro.po fr-FR intro-es-fr.po  
-```  
+```
 will search for translated phrases in all the PO files in the directory `fr-FR`  
 and insert them in the new file `intro-es-fr.po`. If you want to process all  
 the files in `es-ES` like this, looking in all the files in directory `fr-FR`,  
-use the command:  
+use the command:
+
 ```
-php instrans.php --search es-ES fr-FR es-fr    
-```     
+php instrans.php --search es-ES fr-FR es-fr
+```
+
 If you want to search for translated frases in the subdirectory `win` as well,  
 use the option `--recursive`.  
+
   
-  
-#### <id="Syntax_Errors">Syntax Errors</a> ####  
+#### <a id="Syntax_Errors">Syntax Errors</a> ####  
   
 If instrans encounters a syntax error in a PO object, it will provide a tally  
 of the number of syntax errors at the end of processing. In --verbose mode,  
@@ -372,7 +374,7 @@ If your PO files have syntax errors, it is recommended that you use the
 `--verbose` option so you can find and correct the syntax errors.  
   
 For example, if instrans encounters the following PO objects in ORIGINAL-PO:  
-```  
+```po
  #: po/ap_Id.h.h:283            (Problems:                                 )  
  msGiD "Edit"                   (msgid should not have capital letters     )  
  msgstr"Editar"                 (msgstr should be followed by whitespace   )  
@@ -380,7 +382,7 @@ For example, if instrans encounters the following PO objects in ORIGINAL-PO:
  #: po/ap_Id.h.h:281  
  msgi "Help"                    (Should be "msgid"                         )  
  msgstr "Ayuda                  (Line should end in double quotes          )  
-```  
+```
 The NEW-PO will be written: 
 ```
  #: po/ap_Id.h.h:283            (How problems are treated:                 )  
@@ -411,7 +413,7 @@ errors in the arguments passed by the user. If the user uses the options
 `--help` or `--info`, instrans returns 41 or 42 respectively.  
   
   
-#### <a="Why_so_slow">Why so slow?</a> ####  
+#### <a id="Why_so_slow">Why so slow?</a> ####  
    
 Instrans can be very slow when processing large files. On my machine it takes  
 6 seconds to process the AbiWord PO file which has 1500 translated phrases, but  
