@@ -301,8 +301,8 @@ variables first with `--replace`, then re-add the necessary variables later.
 If the *ORIGINAL-PO* and *TRANSLATIONS-PO* are directories, instrans will process  
 all the files in the directory *ORIGINAL-PO* with the extention ".po", ".pot", or  
 ".pox". Instrans will search for files with the same name in the directory  
-TRANSLATIONS-PO in order to insert the translated phrases.  The files in  
-ORIGINAL-PO that don't have the extension ".po", ".pot", or ".pox" will only be  
+*TRANSLATIONS-PO* in order to insert the translated phrases.  The files in  
+*ORIGINAL-PO* that don't have the extension ".po", ".pot", or ".pox" will only be  
 copied to the directory *NEW-PO* without any insertions. Likewise, the PO files  
 en the directory *ORIGINAL-PO* that don't have a matching file with the same name  
 in *TRANSLATIONS-PO* will only be copied.  
@@ -310,7 +310,7 @@ in *TRANSLATIONS-PO* will only be copied.
 The files in *TRANSLATIONS-PO*, however, which don't have a matching file in  
 *ORIGINAL-PO* will not be copied.  Similarly, the subdirectories in both    
 *ORIGINAL-PO* y *TRANSLATIONS-PO* will be ignored and won't be copied over to  
-NEW-PO.  Si you want to process the subdirectories, use the option `--recursive`.  
+*NEW-PO*.  Si you want to process the subdirectories, use the option `--recursive`.  
    
 For example, if you have the directories `es-ES` and `fr-FR` below and want to  
 insert French phrases in the Spanish PO files, you can use the following  
@@ -368,9 +368,9 @@ If instrans encounters a syntax error in a PO object, it will provide a tally
 of the number of syntax errors at the end of processing. In --verbose mode,  
 intrans issues a warning message and the line number where the syntax error  
 can be found. Syntax errors in the *TRANSLATIONS-PO* will be counted, but won't  
-be written to the *NEW-PO*. If a syntax error is encounted in ORIGINAL-PO and  
+be written to the *NEW-PO*. If a syntax error is encounted in *ORIGINAL-PO* and  
 it is a simple problem like a line not ending in double quotes, instrans will  
-fix the problem when writing to NEW-PO. If instrans can't determine where to  
+fix the problem when writing to *NEW-PO*. If instrans can't determine where to  
 put a PO element in the *NEW-PO*, it will write `SYNTAX ERROR: ` and the  
 line with the syntax error in the translator comment of the nearest PO object.  
 If your PO files have syntax errors, it is recommended that you use the  
