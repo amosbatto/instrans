@@ -156,14 +156,14 @@ in other programs.
                   by hand afterwards.  
                                                        
 -o | --overwrite  Replace existing translated phrases. Without this option, the  
-                  translated frase will only be inserted when the msgstre is  
-                  empty.  Si inserting comments, this option will not overwrite  
+                  translated frase will only be inserted when the msgstr is  
+                  empty.  If inserting comments, this option will not overwrite  
                   existing translator comments, except those in the form:  
                   #  [...] "..."  
                     
 -r | --recursive  Process all the subdirectories in ORIGINAL-PO and  
                   TRANSLATIONS-PO. This option will only take effect if  
-                  ORIGINAL-PO and TRASLACIONES-PO are directories.  
+                  ORIGINAL-PO and TRANSLATIONS-PO are directories.  
                     
 -e | --search     Search for translated phrases in any file or directory in  
                   TRANSLATIONS-PO. Use this option to find translated phrases  
@@ -177,7 +177,7 @@ in other programs.
                   all HTML codes.  
                     
 -p | --replace [=FIND REPLACEMENT]      
-                  Replace FIND with REMPLACEMENT in the translated phrase in  
+                  Replace FIND with REPLACEMENT in the translated phrase in  
                   insertions --bilingual and --statusbar. If FIND and  
                   REPLACEMENT are not specified, programming variables will be  
                   replaced with "@#@x@#@". Currently only C, Objective C, PHP,  
