@@ -34,7 +34,7 @@ If you use MS Windows, download PHP from: http://www.php.net
 
 Unzip it and double click in **php-*X.X.X*-installer.exe** to install it. Afterwards  
 add the dirctory where you installed PHP to your PATH variable. In Windows XP,  
-go to: **Start->Setup->Control Panels->System->Advanced->Environment Variables**.    
+go to: **Start > Setup > Control Panels > System > Advanced > Environment Variables**.    
 In the **System Variables** box, select **PATH** and click on **Edit** and add the path  
 where you installed PHP to the end of the line. For instance, if PHP is  
 installed in the directory `c:\Program Files\PHP5`, then your PATH variable  
@@ -82,7 +82,7 @@ and minority languages who have special needs.  It can also be used by
 software translators doing trilingual translations or by translators who  
 want to automatically insert translations from another language.  
   
-Instrans permites the translator to deal with three or more languages as once  
+Instrans permits the translator to deal with three or more languages as once  
 inside a PO file.  This can be useful when translating languages in places  
 where English isn't the dominant written language. For example, in Latin America  
 and in French Africa, many translators of indigenous languages can't read  
@@ -103,12 +103,12 @@ Each PO object has the following format:
     msgstr TRANSLATED-PHRASE  
 ```
 
-Instrans extracts each `msgstr` from TRANSLATIONS-PO and inserts it in the  
-ORIGINAL-PO (or optionally in the NEW-PO) where there is a matching `msgid`.  
+Instrans extracts each `msgstr` from *TRANSLATIONS-PO* and inserts it in the  
+*ORIGINAL-PO* (or optionally in the *NEW-PO*) where there is a matching `msgid`.  
 If there isn't a matching `msgid`, nothing is inserted.  If there is more than  
 one matching msgid, instrans searchs for one that has a matching automatic  
 comment or a matching reference.  By default, instrans only inserts a  
-translated phrase when the msgstr in the ORIGINAL PO is empty, but existing  
+translated phrase when the msgstr in the *ORIGINAL-PO* is empty, but existing  
 msgstr's can be overwritten with the `--overwrite` option. In addition, there  
 are options to insert the translated phrases as a translator comment or to  
 make a bilingual msgstr or to insert translated phrases from the menus in the  
@@ -203,7 +203,7 @@ in other programs.
 ORIGINAL-PO       The original PO file or directory.  If it is a directory, all  
                   the PO files inside the directory will be processed.  
   
-TRANSLACIONS-PO   The PO file or directory which contains the translated  
+TRANSLATIONS-PO   The PO file or directory which contains the translated  
                   phrases which will be inserted into the ORIGINAL-PO (or  
                   optionally into the NEW-PO).  
                     
@@ -298,18 +298,18 @@ variables first with `--replace`, then re-add the necessary variables later.
   
 #### <a id="Processing_Directories">Processing Directories</a> ####  
   
-If the ORIGINAL-PO and TRANSLATIONS-PO are directories, instrans will process  
-all the files in the directory ORIGINAL-PO with the extention ".po", ".pot", or  
+If the *ORIGINAL-PO* and *TRANSLATIONS-PO* are directories, instrans will process  
+all the files in the directory *ORIGINAL-PO* with the extention ".po", ".pot", or  
 ".pox". Instrans will search for files with the same name in the directory  
 TRANSLATIONS-PO in order to insert the translated phrases.  The files in  
 ORIGINAL-PO that don't have the extension ".po", ".pot", or ".pox" will only be  
-copied to the directory NEW-PO without any insertions. Likewise, the PO files  
-en the directory ORIGINAL-PO that don't have a matching file with the same name  
-in TRANSLATIONS-PO will only be copied.  
+copied to the directory *NEW-PO* without any insertions. Likewise, the PO files  
+en the directory *ORIGINAL-PO* that don't have a matching file with the same name  
+in *TRANSLATIONS-PO* will only be copied.  
   
-The files in TRANSLATIONS-PO, however, which don't have a matching file in  
-ORIGINAL-PO will not be copied.  Similarly, the subdirectories in both    
-ORIGINAL-PO y TRANSLATIONS-PO will be ignored and won't be copied over to  
+The files in *TRANSLATIONS-PO*, however, which don't have a matching file in  
+*ORIGINAL-PO* will not be copied.  Similarly, the subdirectories in both    
+*ORIGINAL-PO* y *TRANSLATIONS-PO* will be ignored and won't be copied over to  
 NEW-PO.  Si you want to process the subdirectories, use the option `--recursive`.  
    
 For example, if you have the directories `es-ES` and `fr-FR` below and want to  
@@ -319,7 +319,7 @@ command:
 php instrans.php es-ES fr-FR es-fr
 ```  
    
-This will produce a NEW-PO directory called `es-fr`:
+This will produce a *NEW-PO* directory called `es-fr`:
 ```  
 ORIGINAL-PO:           TRASLACIONES-PO:        NEW-PO:  
 /es-ES/                /fr-FR/                 /es-fr/   
@@ -367,16 +367,16 @@ use the option `--recursive`.
 If instrans encounters a syntax error in a PO object, it will provide a tally  
 of the number of syntax errors at the end of processing. In --verbose mode,  
 intrans issues a warning message and the line number where the syntax error  
-can be found. Syntax errors in the TRANSLATIONS-PO will be counted, but won't  
-be written to the NEW-PO. If a syntax error is encounted in ORIGINAL-PO and  
+can be found. Syntax errors in the *TRANSLATIONS-PO* will be counted, but won't  
+be written to the *NEW-PO*. If a syntax error is encounted in ORIGINAL-PO and  
 it is a simple problem like a line not ending in double quotes, instrans will  
 fix the problem when writing to NEW-PO. If instrans can't determine where to  
-put a PO element in the NEW-PO, it will write `SYNTAX ERROR: ` and the  
+put a PO element in the *NEW-PO*, it will write `SYNTAX ERROR: ` and the  
 line with the syntax error in the translator comment of the nearest PO object.  
 If your PO files have syntax errors, it is recommended that you use the  
 `--verbose` option so you can find and correct the syntax errors.  
   
-For example, if instrans encounters the following PO objects in ORIGINAL-PO:  
+For example, if instrans encounters the following PO objects in *ORIGINAL-PO*:  
 ```po
  #: po/ap_Id.h.h:283            (Problems:                                 )  
  msGiD "Edit"                   (msgid should not have capital letters     )  
@@ -386,7 +386,7 @@ For example, if instrans encounters the following PO objects in ORIGINAL-PO:
  msgi "Help"                    (Should be "msgid"                         )  
  msgstr "Ayuda                  (Line should end in double quotes          )  
 ```
-The NEW-PO will be written: 
+The *NEW-PO* will be written: 
 ```
  #: po/ap_Id.h.h:283            (How problems are treated:                 )  
  msgid "Edit"                   (Fixed without warning message             )  
@@ -418,12 +418,12 @@ errors in the arguments passed by the user. If the user uses the options
   
 #### <a id="Why_so_slow">Why so slow?</a> ####
 
-Instrans can be very slow when processing large files. On my machine it takes  
+Instrans can be slow when processing large files. On my machine it takes  
 6 seconds to process the AbiWord PO file which has 1500 translated phrases, but  
-on older machines it can take much longer. `instrans.php` was originally written  
+on older machines it can take longer. `instrans.php` was originally written  
 to be a web application in PHP, but it soon became clear that it would be a lot  
-more efficient for translators to download instrans and run it on their  
-computers at home.  While PHP is good at serving up web pages, it is horribly  
+more efficient for translators to download `instrans.php` and run it on their  
+computers at home.  While PHP is good at serving up web pages, it is  
 slow at processing large amounts of data in files.     
   
   
