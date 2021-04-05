@@ -96,9 +96,10 @@ Each PO object has the following format:
 ```
  WHITESPACE  
     # TRANSLATOR-COMMENTS  
-    #. AUTOMATIC-COMMENTS  
+    #. EXTRACTED-COMMENTS  
     #: REFERENCE...  
     #, FLAG...  
+    #| msgid previous-untranslated-string  
     msgid UNTRANSLATED-PHRASE  
     msgstr TRANSLATED-PHRASE  
 ```
