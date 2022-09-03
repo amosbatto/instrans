@@ -353,8 +353,8 @@ msgstr "Syntax error in line %d of file \"%s\".\n"
 
 #: instrans.php:1316
 #, php-format
-msgid "No hay un msgstr definido para el msgid \"%s\"\n"
-msgstr "There is no defined msgstr for the msgid \"%s\"\n"
+msgid "No hay un msgstr o msgstr[N] definido para el msgid \"%s\"\n"
+msgstr "There is no defined msgstr or msgstr[N] for the msgid \"%s\"\n"
 
 #: instrans.php:1317
 #, php-format

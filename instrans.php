@@ -179,10 +179,10 @@ class PoObj
 	domain "DOMAIN-NAME"
 	msgctxt "CONTEXT"
     msgid "UNTRANSLATED-STRING" or msgid_plural "UNTRANSLATED-PLURAL-STRING"
-    msgstr "TRANSLATED-STRING" or msgstrN "PLURAL-TRANSLATED-STRING"
+    msgstr "TRANSLATED-STRING" or msgstr[N] "PLURAL-TRANSLATED-STRING"
 	
 	The only required elements are msgid and msgstr 
-	(or their alternatives msgid_plural and msgstrN).*/
+	(or their alternatives msgid_plural and msgstr[N]).*/
 
 	//all PO elements will be arrays, because they can be multiline:
 	public $aTransCom; 
@@ -194,10 +194,10 @@ class PoObj
 	public $aMsgctxt;	//should only be 1 line, but found examples of multiple lines
 	public $aMsgid;
 	public $aMsgidPl; 
-	public $aMsgstr;	 
-	public $aMsgstrNo;	//for ngettext() msgstr's like msgstr1 "..." & msgstr2 "..."
+	public $aMsgstr; 
+	public $aMsgstrNo;	//for ngettext() msgstr's like msgstr[0] "..." & msgstr[1] "..."
 	//Unlike the other arrays, $aMsgstrNo includes the labels 
-	//if there is a $aMsgstrNo, will also put the text of msgstr1 in $aMsgstr for searching
+	//if there is a $aMsgstrNo, will also put the text of msgstr[N] in $aMsgstr for searching
 
 	//Returns a string which contains the PO object with new lines (\n)
 	//Adds blank line to the end to terminate the PO object.
@@ -249,12 +249,12 @@ class PoObj
 				$sPo .= '"' . $s . "\"\n";
 		}
 
-		if (is_array($this->aMsgstr))
+		if (is_array($this->aMsgstr) or is_array($this->aMsgstrNo))
 		{
 			if (is_array($this->aMsgstrNo))
 			{
 				foreach ($this->aMsgstrNo as $s)
-					$sPo .= $s . "\n";
+					$sPo .=  $s . "\n";
 			}
 			else
 			{	
@@ -285,7 +285,7 @@ class PoObj
 	//5: msgid, 6: msgid continued line, 
 	//7: msgid_plural, 8: msgid_plural continued line, 
 	//9: msgstr, 10: msgstr continued line, 
-	//11: msgstrN, 12: msgstrN continued line
+	//11: msgstr[N], 12: msgstr[N] continued line
 	public function addLine($sLine)
 	{
 		global $sErr, 
@@ -354,17 +354,13 @@ class PoObj
 					SYNTAX_MSGID_CONT;	
 			}
 			elseif ($iLastElement == SYNTAX_MSGSTR)
-			{			
+			{
 				$this->aMsgstr[] = substr($sLine, 1, -1); //strip double quotes from ends
 				return $iRet == SYNTAX_ERR_NO_QUOTES ? SYNTAX_ERR_NO_QUOTES : 
 					SYNTAX_MSGSTR_CONT;	
 			}
 			elseif ($iLastElement == SYNTAX_MSGSTRN)
-			{			
-				//if still in the first msgstr (not in msgstr2 yet), then also add to $aMsgstr
-				if (strnpos($this->strMsgstrNo(), "\nmsgstr", 6) === false) 
-					$this->aMsgstr[] = substr($sLine, 1, -1);
-				
+			{
 				$this->aMsgstrNo[] = $sLine;
 				return $iRet == SYNTAX_ERR_NO_QUOTES ? SYNTAX_ERR_NO_QUOTES : 
 					SYNTAX_MSGSTRN_CONT; 
@@ -459,7 +455,7 @@ class PoObj
 				return $iRet == SYNTAX_ERR_NO_QUOTES ? SYNTAX_ERR_NO_QUOTES : SYNTAX_MSGSTR;			
 			}
 		}		
-		elseif (preg_match('/^msgstr[0-9]+[ \t]+"/', $sLine))	//if a msgstr1, msgstr2, ...etc.
+		elseif (preg_match('/^msgstr\[(\d+)\][ \t]+"/', $sLine))	//if msgstr[0], msgstr[1], msgstr[2] ...
 		{	
 			//if line doesn't terminate in double quotes, then syntax error
 			if ($sLine[strlen($sLine) - 1] != '"') 
@@ -470,14 +466,10 @@ class PoObj
 			}
 			
 			$this->aMsgstrNo[] = $sLine;
-			
-			//if the aMsgstr isn't yet defined, fill it as well
-			if ($this->aMsgstr === null)	
-				$this->aMsgstr[] = substr(strstr($sLine, '"'), 1, -1);
 					
-			if($this->aMsgid === null)
+			if($this->aMsgidPl === null)
 			{
-				$sErr = __("El msgid no es definido para este msgstr") . 'N.';
+				$sErr = __("El msgid_plural no es definido para este msgstr[n]") . 'N.';
 				$iLastElement = SYNTAX_MSGSTRN;
 				return -10;
 			}
@@ -1312,19 +1304,32 @@ function processTransPoFile($sTransPoFile)
 		
 		if ($bCreateNewObj === true)
 		{
-			//checks whether the PO object has both a msgid and msgstr defined
-			if (!is_array($aTransPo[$cntTransPoObjs]->aMsgstr) && 
-				is_array($aTransPo[$cntTransPoObjs]->aMsgid) != 
-				is_array($aTransPo[$cntTransPoObjs]->aMsgstr))
+			//checks whether the PO object has both a msgid and msgstr (or msgstr[N]) defined
+			if (is_array($aTransPo[$cntTransPoObjs]->aMsgid) and 
+				!is_array($aTransPo[$cntTransPoObjs]->aMsgstr) && !is_array($aTransPo[$cntTransPoObjs]->aMsgstrNo))
 			{
 				$cntTransPoSyntaxErr++;
 				$sOut = sprintf(__(
 					"Error de sintaxis en línea %d del archivo \"%s\"\n" .
-					"No hay un msgstr definido para el msgid \"%s\"\n\n"), 
+					"No hay un msgstr o msgstr[N] definido para el msgid \"%s\"\n\n"), 
 					$cntTransPoFileLines - 1, $sTransPoFile, 
 					implode('', $aTransPo[$cntTransPoObjs]->aMsgid));
 				output($sOut);
 			}
+			
+			//checks whether the PO object has both a msgid_plural and msgstr[N]) defined
+			if (is_array($aTransPo[$cntTransPoObjs]->aMsgidPl) and !is_array($aTransPo[$cntTransPoObjs]->aMsgstrNo))
+			{
+				$cntTransPoSyntaxErr++;
+				$sOut = sprintf(__(
+					"Error de sintaxis en línea %d del archivo \"%s\"\n" .
+					"No hay un msgstr[N] definido para el msgid_plural \"%s\"\n\n"), 
+					$cntTransPoFileLines - 1, $sTransPoFile, 
+					implode('', $aTransPo[$cntTransPoObjs]->aMsgid));
+				output($sOut);
+			}
+			
+			
 			
 			$bCreateNewObj = false;
 			$aTransPo[] = new PoObj(); 
@@ -1532,12 +1537,18 @@ function processOrigPoFile($sOrigPoFile, $sTransPoFile, $sNewPoFile, $sFinalPoFi
 				if ($bCommentIns)	//if inserting translation as a comment
 				{
 					$aNew = null;
-					
-					if (is_array($aTransPo[$posPo]->aMsgstr))
+					$startComment = (empty($sLangComment) ? '' : "[$sLangComment] ") . 
+						($bStatusBarIns ? 'MENU: ' : '');
+						
+					if (is_array($aTransPo[$posPo]->aMsgstrNo))
+					{
+						foreach($aTransPo[$posPo]->aMsgstrNo as $st)
+							$aNew[] = $startComment . $st;
+					}
+					elseif (is_array($aTransPo[$posPo]->aMsgstr))
 					{
 						foreach($aTransPo[$posPo]->aMsgstr as $st)
-							$aNew[] = '[' . $sLangComment . 
-								($bStatusBarIns ? '] MENU: "' : '] "') . $st . '"';
+							$aNew[] = $startComment . '"' . $st . '"';
 					}
 	
 					if ($bOverwrite)
@@ -2242,18 +2253,6 @@ function perlStr($str)
 	return '/' . preg_quote($str) . '/';
 }
 	
-//In PHP 7.2 and later, count(NULL) throws a warning, so created a myCount() function
-//to avoid the warning.
-function myCount($a) 
-{
-	if (is_array($a)) 
-		return count($a);
-	elseif (is_string($a))
-		return 1;
-	elseif (is_null($a))
-		return 0;
-	else
-		return 1;
-}
+
 		
 ?>

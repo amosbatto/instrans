@@ -96,4 +96,18 @@ function myRealPath($sFileOrDir)
 		return $sPath;
 	}
 }
+
+//In PHP 7.2 and later, count(NULL) throws a warning, so created a myCount() function
+//to avoid the warning.
+function myCount($a) 
+{
+	if (is_array($a)) 
+		return count($a);
+	elseif (is_string($a))
+		return 1;
+	elseif (is_null($a))
+		return 0;
+	else
+		return 1;
+}
 ?>
